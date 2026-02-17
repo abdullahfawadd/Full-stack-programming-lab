@@ -17,82 +17,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interactive Calculator | Lab 02 – Abdullah Fawad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="container">
-    <!-- Header -->
-    <header class="calc-header">
-      <h1>🧮 Interactive Calculator</h1>
-      <p class="subtitle">Perform basic arithmetic operations instantly.</p>
-    </header>
-
-    <!-- Calculator Card -->
-    <div class="calc-card">
-      <!-- Number A -->
-      <div class="input-group">
-        <label for="numberA">First Number</label>
-        <input
-          type="number"
-          id="numberA"
-          class="input-field"
-          placeholder="Enter first number"
-          step="any"
-        />
-      </div>
-
-      <!-- Operation Selector -->
-      <div class="input-group">
-        <label for="operation">Operation</label>
-        <select id="operation" class="input-field">
-          <option value="" disabled selected>Select operation</option>
-          <option value="add">➕ Addition (+)</option>
-          <option value="subtract">➖ Subtraction (−)</option>
-          <option value="multiply">✖️ Multiplication (×)</option>
-          <option value="divide">➗ Division (÷)</option>
-        </select>
-      </div>
-
-      <!-- Number B -->
-      <div class="input-group">
-        <label for="numberB">Second Number</label>
-        <input
-          type="number"
-          id="numberB"
-          class="input-field"
-          placeholder="Enter second number"
-          step="any"
-        />
-      </div>
-
-      <!-- Actions -->
-      <div class="actions">
-        <button type="button" class="btn btn-calculate" id="btnCalculate">
-          Calculate
-        </button>
-        <button type="button" class="btn btn-clear" id="btnClear">
-          Clear
-        </button>
-      </div>
-
-      <!-- Result Box -->
-      <div id="resultBox" class="result-box hidden">
-        <span class="result-label">Result</span>
-        <span id="resultValue" class="result-value"></span>
-      </div>
-
-      <!-- Error Box -->
-      <div id="errorBox" class="error-box hidden">
-        <p id="errorMessage"></p>
-      </div>
+  <!-- Top Nav Bar -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <span class="nav-brand">Lab 02 &mdash; JS Interactivity</span>
+      <span class="nav-author">Abdullah Fawad</span>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2026 Abdullah Fawad — Full-Stack Programming Lab</p>
-    </footer>
-  </div>
+  <main class="main">
+    <div class="container">
+
+      <!-- Header -->
+      <header class="calc-header">
+        <h1>Interactive Calculator</h1>
+        <p class="subtitle">Enter two numbers, pick an operation, and get the result.</p>
+      </header>
+
+      <!-- Calculator Card -->
+      <div class="calc-card">
+
+        <!-- Inputs Row -->
+        <div class="input-row">
+          <div class="input-group">
+            <label for="numberA">First Number</label>
+            <input
+              type="number"
+              id="numberA"
+              class="input-field"
+              placeholder="0"
+              step="any"
+              autofocus
+            />
+          </div>
+
+          <!-- Operation Selector -->
+          <div class="input-group input-group--op">
+            <label for="operation">Operator</label>
+            <select id="operation" class="input-field select-field">
+              <option value="" disabled selected>?</option>
+              <option value="add">+</option>
+              <option value="subtract">&minus;</option>
+              <option value="multiply">&times;</option>
+              <option value="divide">&divide;</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="numberB">Second Number</label>
+            <input
+              type="number"
+              id="numberB"
+              class="input-field"
+              placeholder="0"
+              step="any"
+            />
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button type="button" class="btn btn-calculate" id="btnCalculate">
+            Calculate
+          </button>
+          <button type="button" class="btn btn-clear" id="btnClear">
+            Clear
+          </button>
+        </div>
+
+        <!-- Result Display -->
+        <div id="resultBox" class="result-box hidden">
+          <span class="result-label">Result</span>
+          <span id="resultExpression" class="result-expr"></span>
+          <span id="resultValue" class="result-value"></span>
+        </div>
+
+        <!-- Error Display -->
+        <div id="errorBox" class="error-box hidden">
+          <p id="errorMessage"></p>
+        </div>
+
+        <!-- Calculation History -->
+        <div id="historySection" class="history-section hidden">
+          <h3 class="history-title">History</h3>
+          <ul id="historyList" class="history-list"></ul>
+          <button type="button" class="btn btn-clear-history" id="btnClearHistory">
+            Clear History
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Abdullah Fawad &mdash; Full-Stack Programming Lab</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

@@ -13,6 +13,7 @@
  *   - Calculates total score and displays results via DOM manipulation.
  *   - Provides conditional feedback messages based on performance.
  *   - Includes a Reset Quiz feature to clear all inputs and results.
+ *   - Live progress bar tracks how many questions have been answered.
  * ============================================================================
  */
 
@@ -35,15 +36,20 @@ const answer4   = "b"; // ===
 const question5 = "What does console.log() do in JavaScript?";
 const answer5   = "b"; // Prints output to the browser console
 
+const TOTAL_QUESTIONS = 5;
+
 /* ── DOM References ──────────────────────────────────────────────────────── */
 
 const quizForm        = document.getElementById("quizForm");
-const btnSubmit       = document.getElementById("btnSubmit");
 const btnReset        = document.getElementById("btnReset");
 const resultsSection  = document.getElementById("resultsSection");
 const scoreHeading    = document.getElementById("scoreHeading");
 const feedbackMessage = document.getElementById("feedbackMessage");
 const answerDetails   = document.getElementById("answerDetails");
+const progressFill    = document.getElementById("progressFill");
+const progressText    = document.getElementById("progressText");
+const scoreCircle     = document.getElementById("scoreCircle");
+const scoreNumber     = document.getElementById("scoreNumber");
 
 /* ── Helper: Get Selected Value for a Question ───────────────────────────── */
 
@@ -58,47 +64,45 @@ function getSelectedAnswer(name) {
   return selected ? selected.value : null;
 }
 
+/* ── Live Progress Tracking ──────────────────────────────────────────────── */
+
+/**
+ * Updates the progress bar and text based on how many questions
+ * the user has answered so far.
+ */
+function updateProgress() {
+  let answered = 0;
+  for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+    if (getSelectedAnswer(`q${i}`)) {
+      answered++;
+    }
+  }
+  const pct = (answered / TOTAL_QUESTIONS) * 100;
+  progressFill.style.width = pct + "%";
+  progressText.textContent = `${answered} of ${TOTAL_QUESTIONS} answered`;
+}
+
+// Attach change listeners to all radio buttons for live progress
+document.querySelectorAll('#quizForm input[type="radio"]').forEach((radio) => {
+  radio.addEventListener("change", updateProgress);
+});
+
 /* ── Individual Answer-Check Functions ───────────────────────────────────── */
 
-/**
- * Checks if the user's answer to Question 1 is correct.
- * @returns {boolean}
- */
-function checkAnswer1() {
-  return getSelectedAnswer("q1") === answer1;
-}
+/** @returns {boolean} */
+function checkAnswer1() { return getSelectedAnswer("q1") === answer1; }
 
-/**
- * Checks if the user's answer to Question 2 is correct.
- * @returns {boolean}
- */
-function checkAnswer2() {
-  return getSelectedAnswer("q2") === answer2;
-}
+/** @returns {boolean} */
+function checkAnswer2() { return getSelectedAnswer("q2") === answer2; }
 
-/**
- * Checks if the user's answer to Question 3 is correct.
- * @returns {boolean}
- */
-function checkAnswer3() {
-  return getSelectedAnswer("q3") === answer3;
-}
+/** @returns {boolean} */
+function checkAnswer3() { return getSelectedAnswer("q3") === answer3; }
 
-/**
- * Checks if the user's answer to Question 4 is correct.
- * @returns {boolean}
- */
-function checkAnswer4() {
-  return getSelectedAnswer("q4") === answer4;
-}
+/** @returns {boolean} */
+function checkAnswer4() { return getSelectedAnswer("q4") === answer4; }
 
-/**
- * Checks if the user's answer to Question 5 is correct.
- * @returns {boolean}
- */
-function checkAnswer5() {
-  return getSelectedAnswer("q5") === answer5;
-}
+/** @returns {boolean} */
+function checkAnswer5() { return getSelectedAnswer("q5") === answer5; }
 
 /* ── Score Calculation ───────────────────────────────────────────────────── */
 
@@ -117,7 +121,6 @@ function calculateScore() {
   ];
 
   const score = results.filter((r) => r.correct).length;
-
   return { score, total: results.length, details: results };
 }
 
@@ -133,15 +136,15 @@ function getFeedbackMessage(score, total) {
   const percentage = (score / total) * 100;
 
   if (percentage === 100) {
-    return "🎉 Perfect score! Outstanding work!";
+    return "Perfect score — outstanding work!";
   } else if (percentage >= 80) {
-    return "👏 Excellent! You really know your stuff!";
+    return "Excellent! You really know your stuff.";
   } else if (percentage >= 60) {
-    return "😊 Good job! A little more practice and you'll ace it.";
+    return "Good job! A little more practice and you'll ace it.";
   } else if (percentage >= 40) {
-    return "🤔 Not bad, but there's room for improvement.";
+    return "Not bad, but there's room for improvement.";
   } else {
-    return "📚 Keep studying — you'll get there!";
+    return "Keep studying — you'll get there!";
   }
 }
 
@@ -153,25 +156,45 @@ function getFeedbackMessage(score, total) {
  */
 function displayResults(result) {
   const { score, total, details } = result;
+  const percentage = (score / total) * 100;
 
-  // Update heading & feedback
-  scoreHeading.textContent = `Your Score: ${score} / ${total}`;
+  // Score circle
+  scoreNumber.textContent = score;
+  scoreCircle.classList.remove("excellent", "poor");
+  if (percentage >= 60) {
+    scoreCircle.classList.add("excellent");
+  } else {
+    scoreCircle.classList.add("poor");
+  }
+
+  // Heading & feedback
+  scoreHeading.textContent =
+    score === total ? "All Correct!" :
+    score === 0     ? "No Correct Answers" :
+                      `${score} out of ${total} Correct`;
+
   feedbackMessage.textContent = getFeedbackMessage(score, total);
 
-  // Build per-question detail list
+  // Per-question detail list
   answerDetails.innerHTML = "";
   details.forEach(({ qNum, question, correct }) => {
     const li = document.createElement("li");
     li.className = correct ? "correct-item" : "incorrect-item";
-    li.textContent = `Q${qNum}: ${question} — ${correct ? "✅ Correct" : "❌ Incorrect"}`;
+    const icon = correct ? "&#10003;" : "&#10007;";
+    li.innerHTML = `<strong>Q${qNum}:</strong> ${question} &mdash; ${icon} ${correct ? "Correct" : "Incorrect"}`;
     answerDetails.appendChild(li);
   });
 
-  // Highlight cards
+  // Highlight cards & show badges
   details.forEach(({ qNum, correct }) => {
-    const card = document.getElementById(`card-q${qNum}`);
+    const card  = document.getElementById(`card-q${qNum}`);
+    const badge = document.getElementById(`badge-q${qNum}`);
+
     card.classList.remove("correct", "incorrect");
     card.classList.add(correct ? "correct" : "incorrect");
+
+    badge.textContent = correct ? "Correct" : "Incorrect";
+    badge.className   = "q-badge " + (correct ? "badge-correct" : "badge-incorrect");
   });
 
   // Show section
@@ -185,10 +208,12 @@ quizForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // Ensure all questions are answered
-  const totalQuestions = 5;
-  for (let i = 1; i <= totalQuestions; i++) {
+  for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
     if (!getSelectedAnswer(`q${i}`)) {
-      alert(`⚠️ Please answer Question ${i} before submitting.`);
+      const card = document.getElementById(`card-q${i}`);
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.style.outline = "2px solid var(--clr-danger)";
+      setTimeout(() => { card.style.outline = ""; }, 1500);
       return;
     }
   }
@@ -200,18 +225,25 @@ quizForm.addEventListener("submit", (event) => {
 /* ── Event: Reset Quiz ───────────────────────────────────────────────────── */
 
 btnReset.addEventListener("click", () => {
-  // Clear all radio selections
   quizForm.reset();
-
-  // Hide results section
   resultsSection.classList.add("hidden");
 
-  // Remove card highlights
-  for (let i = 1; i <= 5; i++) {
-    const card = document.getElementById(`card-q${i}`);
+  // Reset cards & badges
+  for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+    const card  = document.getElementById(`card-q${i}`);
+    const badge = document.getElementById(`badge-q${i}`);
     card.classList.remove("correct", "incorrect");
+    badge.className = "q-badge";
+    badge.textContent = "";
   }
 
-  // Scroll back to top
+  // Reset progress
+  progressFill.style.width = "0%";
+  progressText.textContent = `0 of ${TOTAL_QUESTIONS} answered`;
+
+  // Reset score circle
+  scoreCircle.classList.remove("excellent", "poor");
+  scoreNumber.textContent = "0";
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
