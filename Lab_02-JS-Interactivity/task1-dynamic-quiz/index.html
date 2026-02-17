@@ -24,131 +24,145 @@
 </head>
 <body>
 
-  <!-- Top Nav Bar -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <span class="nav-brand">Lab 02 &mdash; JS Interactivity</span>
-      <span class="nav-author">Abdullah Fawad</span>
-    </div>
-  </nav>
+  <div class="page">
 
-  <main class="main">
-    <div class="container">
+    <!-- Minimal Top Bar -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <span class="topbar-label">Lab 02 &mdash; JS Interactivity</span>
+        <span class="topbar-divider"></span>
+        <span class="topbar-author">Abdullah Fawad</span>
+      </div>
+    </header>
 
-      <!-- Header -->
-      <header class="quiz-header">
-        <h1>Dynamic Quiz</h1>
-        <p class="subtitle">Answer all 5 questions, then submit to see your score.</p>
-        <div class="progress-bar" id="progressBar">
-          <div class="progress-fill" id="progressFill"></div>
-        </div>
-        <p class="progress-text" id="progressText">0 of 5 answered</p>
-      </header>
+    <main class="main">
+      <div class="container">
 
-      <!-- Quiz Form -->
-      <form id="quizForm" autocomplete="off">
-
-        <!-- Question 1 -->
-        <div class="question-card" id="card-q1">
-          <div class="card-top">
-            <span class="q-number">01</span>
-            <span class="q-badge" id="badge-q1"></span>
-          </div>
-          <p class="q-text">What does <strong>HTML</strong> stand for?</p>
-          <div class="options">
-            <label class="option"><input type="radio" name="q1" value="a" /><span class="option-letter">A</span><span>Hyper Trainer Marking Language</span></label>
-            <label class="option"><input type="radio" name="q1" value="b" /><span class="option-letter">B</span><span>HyperText Markup Language</span></label>
-            <label class="option"><input type="radio" name="q1" value="c" /><span class="option-letter">C</span><span>HyperText Marketing Language</span></label>
-            <label class="option"><input type="radio" name="q1" value="d" /><span class="option-letter">D</span><span>None of the above</span></label>
-          </div>
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1>Dynamic Quiz</h1>
+          <p class="page-desc">Answer all five questions below, then submit to see your results.</p>
         </div>
 
-        <!-- Question 2 -->
-        <div class="question-card" id="card-q2">
-          <div class="card-top">
-            <span class="q-number">02</span>
-            <span class="q-badge" id="badge-q2"></span>
+        <!-- Progress -->
+        <div class="progress-wrapper">
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
           </div>
-          <p class="q-text">Which language is used for styling web pages?</p>
-          <div class="options">
-            <label class="option"><input type="radio" name="q2" value="a" /><span class="option-letter">A</span><span>HTML</span></label>
-            <label class="option"><input type="radio" name="q2" value="b" /><span class="option-letter">B</span><span>JavaScript</span></label>
-            <label class="option"><input type="radio" name="q2" value="c" /><span class="option-letter">C</span><span>CSS</span></label>
-            <label class="option"><input type="radio" name="q2" value="d" /><span class="option-letter">D</span><span>Python</span></label>
-          </div>
+          <span class="progress-label" id="progressText">0 / 5</span>
         </div>
 
-        <!-- Question 3 -->
-        <div class="question-card" id="card-q3">
-          <div class="card-top">
-            <span class="q-number">03</span>
-            <span class="q-badge" id="badge-q3"></span>
-          </div>
-          <p class="q-text">Inside which HTML element do we put JavaScript?</p>
-          <div class="options">
-            <label class="option"><input type="radio" name="q3" value="a" /><span class="option-letter">A</span><span>&lt;js&gt;</span></label>
-            <label class="option"><input type="radio" name="q3" value="b" /><span class="option-letter">B</span><span>&lt;javascript&gt;</span></label>
-            <label class="option"><input type="radio" name="q3" value="c" /><span class="option-letter">C</span><span>&lt;script&gt;</span></label>
-            <label class="option"><input type="radio" name="q3" value="d" /><span class="option-letter">D</span><span>&lt;code&gt;</span></label>
-          </div>
-        </div>
+        <!-- Quiz Form -->
+        <form id="quizForm" autocomplete="off">
 
-        <!-- Question 4 -->
-        <div class="question-card" id="card-q4">
-          <div class="card-top">
-            <span class="q-number">04</span>
-            <span class="q-badge" id="badge-q4"></span>
+          <!-- Q1 -->
+          <section class="question-card" id="card-q1">
+            <div class="question-header">
+              <span class="question-num">Question 1</span>
+              <span class="question-badge" id="badge-q1"></span>
+            </div>
+            <p class="question-text">What does <strong>HTML</strong> stand for?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q1" value="a" /><span class="option-marker">A</span><span class="option-text">Hyper Trainer Marking Language</span></label>
+              <label class="option"><input type="radio" name="q1" value="b" /><span class="option-marker">B</span><span class="option-text">HyperText Markup Language</span></label>
+              <label class="option"><input type="radio" name="q1" value="c" /><span class="option-marker">C</span><span class="option-text">HyperText Marketing Language</span></label>
+              <label class="option"><input type="radio" name="q1" value="d" /><span class="option-marker">D</span><span class="option-text">None of the above</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Q2 -->
+          <section class="question-card" id="card-q2">
+            <div class="question-header">
+              <span class="question-num">Question 2</span>
+              <span class="question-badge" id="badge-q2"></span>
+            </div>
+            <p class="question-text">Which language is used for styling web pages?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q2" value="a" /><span class="option-marker">A</span><span class="option-text">HTML</span></label>
+              <label class="option"><input type="radio" name="q2" value="b" /><span class="option-marker">B</span><span class="option-text">JavaScript</span></label>
+              <label class="option"><input type="radio" name="q2" value="c" /><span class="option-marker">C</span><span class="option-text">CSS</span></label>
+              <label class="option"><input type="radio" name="q2" value="d" /><span class="option-marker">D</span><span class="option-text">Python</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Q3 -->
+          <section class="question-card" id="card-q3">
+            <div class="question-header">
+              <span class="question-num">Question 3</span>
+              <span class="question-badge" id="badge-q3"></span>
+            </div>
+            <p class="question-text">Inside which HTML element do we put JavaScript?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q3" value="a" /><span class="option-marker">A</span><span class="option-text">&lt;js&gt;</span></label>
+              <label class="option"><input type="radio" name="q3" value="b" /><span class="option-marker">B</span><span class="option-text">&lt;javascript&gt;</span></label>
+              <label class="option"><input type="radio" name="q3" value="c" /><span class="option-marker">C</span><span class="option-text">&lt;script&gt;</span></label>
+              <label class="option"><input type="radio" name="q3" value="d" /><span class="option-marker">D</span><span class="option-text">&lt;code&gt;</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Q4 -->
+          <section class="question-card" id="card-q4">
+            <div class="question-header">
+              <span class="question-num">Question 4</span>
+              <span class="question-badge" id="badge-q4"></span>
+            </div>
+            <p class="question-text">Which operator is used for strict equality in JavaScript?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q4" value="a" /><span class="option-marker">A</span><span class="option-text">==</span></label>
+              <label class="option"><input type="radio" name="q4" value="b" /><span class="option-marker">B</span><span class="option-text">===</span></label>
+              <label class="option"><input type="radio" name="q4" value="c" /><span class="option-marker">C</span><span class="option-text">!=</span></label>
+              <label class="option"><input type="radio" name="q4" value="d" /><span class="option-marker">D</span><span class="option-text">=</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Q5 -->
+          <section class="question-card" id="card-q5">
+            <div class="question-header">
+              <span class="question-num">Question 5</span>
+              <span class="question-badge" id="badge-q5"></span>
+            </div>
+            <p class="question-text">What does <code>console.log()</code> do in JavaScript?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q5" value="a" /><span class="option-marker">A</span><span class="option-text">Displays an alert box</span></label>
+              <label class="option"><input type="radio" name="q5" value="b" /><span class="option-marker">B</span><span class="option-text">Prints output to the browser console</span></label>
+              <label class="option"><input type="radio" name="q5" value="c" /><span class="option-marker">C</span><span class="option-text">Writes directly into the HTML</span></label>
+              <label class="option"><input type="radio" name="q5" value="d" /><span class="option-marker">D</span><span class="option-text">Compiles the code</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Actions -->
+          <div class="actions">
+            <button type="submit" class="btn btn-primary" id="btnSubmit">Submit Quiz</button>
+            <button type="button" class="btn btn-secondary" id="btnReset">Reset</button>
           </div>
-          <p class="q-text">Which operator is used for strict equality in JavaScript?</p>
-          <div class="options">
-            <label class="option"><input type="radio" name="q4" value="a" /><span class="option-letter">A</span><span>==</span></label>
-            <label class="option"><input type="radio" name="q4" value="b" /><span class="option-letter">B</span><span>===</span></label>
-            <label class="option"><input type="radio" name="q4" value="c" /><span class="option-letter">C</span><span>!=</span></label>
-            <label class="option"><input type="radio" name="q4" value="d" /><span class="option-letter">D</span><span>=</span></label>
+
+        </form>
+
+        <!-- Results -->
+        <section id="resultsSection" class="results-panel hidden">
+          <div class="results-header">
+            <div class="score-ring" id="scoreCircle">
+              <span class="score-num" id="scoreNumber">0</span>
+              <span class="score-sep">/</span>
+              <span class="score-den" id="scoreTotal">5</span>
+            </div>
+            <div class="results-meta">
+              <h2 id="scoreHeading" class="results-title"></h2>
+              <p id="feedbackMessage" class="results-feedback"></p>
+            </div>
           </div>
-        </div>
+          <ul id="answerDetails" class="results-breakdown"></ul>
+        </section>
 
-        <!-- Question 5 -->
-        <div class="question-card" id="card-q5">
-          <div class="card-top">
-            <span class="q-number">05</span>
-            <span class="q-badge" id="badge-q5"></span>
-          </div>
-          <p class="q-text">What does <code>console.log()</code> do in JavaScript?</p>
-          <div class="options">
-            <label class="option"><input type="radio" name="q5" value="a" /><span class="option-letter">A</span><span>Displays an alert box</span></label>
-            <label class="option"><input type="radio" name="q5" value="b" /><span class="option-letter">B</span><span>Prints output to the browser console</span></label>
-            <label class="option"><input type="radio" name="q5" value="c" /><span class="option-letter">C</span><span>Writes directly into the HTML</span></label>
-            <label class="option"><input type="radio" name="q5" value="d" /><span class="option-letter">D</span><span>Compiles the code</span></label>
-          </div>
-        </div>
+      </div>
+    </main>
 
-        <!-- Actions -->
-        <div class="actions">
-          <button type="submit" class="btn btn-submit" id="btnSubmit">Submit Quiz</button>
-          <button type="button" class="btn btn-reset" id="btnReset">Reset Quiz</button>
-        </div>
-      </form>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; 2026 Abdullah Fawad &mdash; Full-Stack Programming Lab</p>
+    </footer>
 
-      <!-- Results Section -->
-      <section id="resultsSection" class="results-section hidden">
-        <div class="score-circle" id="scoreCircle">
-          <span id="scoreNumber">0</span>
-          <span class="score-divider">/</span>
-          <span id="scoreTotal">5</span>
-        </div>
-        <h2 id="scoreHeading"></h2>
-        <p id="feedbackMessage" class="feedback-msg"></p>
-        <ul id="answerDetails"></ul>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2026 Abdullah Fawad &mdash; Full-Stack Programming Lab</p>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

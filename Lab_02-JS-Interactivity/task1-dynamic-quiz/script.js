@@ -194,7 +194,7 @@ function displayResults(result) {
     card.classList.add(correct ? "correct" : "incorrect");
 
     badge.textContent = correct ? "Correct" : "Incorrect";
-    badge.className   = "q-badge " + (correct ? "badge-correct" : "badge-incorrect");
+    badge.className   = "question-badge " + (correct ? "badge-correct" : "badge-incorrect");
   });
 
   // Show section
@@ -212,7 +212,7 @@ quizForm.addEventListener("submit", (event) => {
     if (!getSelectedAnswer(`q${i}`)) {
       const card = document.getElementById(`card-q${i}`);
       card.scrollIntoView({ behavior: "smooth", block: "center" });
-      card.style.outline = "2px solid var(--clr-danger)";
+      card.style.outline = "2px solid var(--color-error)";
       setTimeout(() => { card.style.outline = ""; }, 1500);
       return;
     }
@@ -233,7 +233,7 @@ btnReset.addEventListener("click", () => {
     const card  = document.getElementById(`card-q${i}`);
     const badge = document.getElementById(`badge-q${i}`);
     card.classList.remove("correct", "incorrect");
-    badge.className = "q-badge";
+    badge.className = "question-badge";
     badge.textContent = "";
   }
 
