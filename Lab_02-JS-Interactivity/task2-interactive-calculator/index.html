@@ -1,0 +1,99 @@
+<!--
+  ============================================================================
+  Task 2: Interactive Calculator
+  Lab 02 - JS Interactivity
+  Full-Stack Programming Lab
+
+  Author : Abdullah Fawad
+  Date   : 2026-02-17
+  Desc   : A fully interactive calculator supporting +, −, ×, ÷ with
+           input validation, division-by-zero prevention, dynamic DOM
+           result display, and colour-coded result box (green / red).
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Calculator | Lab 02 – Abdullah Fawad</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="calc-header">
+      <h1>🧮 Interactive Calculator</h1>
+      <p class="subtitle">Perform basic arithmetic operations instantly.</p>
+    </header>
+
+    <!-- Calculator Card -->
+    <div class="calc-card">
+      <!-- Number A -->
+      <div class="input-group">
+        <label for="numberA">First Number</label>
+        <input
+          type="number"
+          id="numberA"
+          class="input-field"
+          placeholder="Enter first number"
+          step="any"
+        />
+      </div>
+
+      <!-- Operation Selector -->
+      <div class="input-group">
+        <label for="operation">Operation</label>
+        <select id="operation" class="input-field">
+          <option value="" disabled selected>Select operation</option>
+          <option value="add">➕ Addition (+)</option>
+          <option value="subtract">➖ Subtraction (−)</option>
+          <option value="multiply">✖️ Multiplication (×)</option>
+          <option value="divide">➗ Division (÷)</option>
+        </select>
+      </div>
+
+      <!-- Number B -->
+      <div class="input-group">
+        <label for="numberB">Second Number</label>
+        <input
+          type="number"
+          id="numberB"
+          class="input-field"
+          placeholder="Enter second number"
+          step="any"
+        />
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button type="button" class="btn btn-calculate" id="btnCalculate">
+          Calculate
+        </button>
+        <button type="button" class="btn btn-clear" id="btnClear">
+          Clear
+        </button>
+      </div>
+
+      <!-- Result Box -->
+      <div id="resultBox" class="result-box hidden">
+        <span class="result-label">Result</span>
+        <span id="resultValue" class="result-value"></span>
+      </div>
+
+      <!-- Error Box -->
+      <div id="errorBox" class="error-box hidden">
+        <p id="errorMessage"></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 Abdullah Fawad — Full-Stack Programming Lab</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

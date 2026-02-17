@@ -1,0 +1,116 @@
+<!--
+  ============================================================================
+  Task 1: Dynamic Quiz
+  Lab 02 - JS Interactivity
+  Full-Stack Programming Lab
+
+  Author : Abdullah Fawad
+  Date   : 2026-02-17
+  Desc   : A dynamic quiz application with 5 questions, automatic grading,
+           DOM-based result display, score-dependent feedback messages,
+           and a reset function.
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Quiz | Lab 02 – Abdullah Fawad</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="quiz-header">
+      <h1>📝 Dynamic Quiz</h1>
+      <p class="subtitle">Test your knowledge — 5 quick questions!</p>
+    </header>
+
+    <!-- Quiz Form -->
+    <form id="quizForm" autocomplete="off">
+
+      <!-- Question 1 -->
+      <div class="question-card" id="card-q1">
+        <span class="q-number">Q1</span>
+        <p class="q-text">What does <strong>HTML</strong> stand for?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="a" /> Hyper Trainer Marking Language</label>
+          <label><input type="radio" name="q1" value="b" /> HyperText Markup Language</label>
+          <label><input type="radio" name="q1" value="c" /> HyperText Marketing Language</label>
+          <label><input type="radio" name="q1" value="d" /> None of the above</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-card" id="card-q2">
+        <span class="q-number">Q2</span>
+        <p class="q-text">Which language is used for styling web pages?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a" /> HTML</label>
+          <label><input type="radio" name="q2" value="b" /> JavaScript</label>
+          <label><input type="radio" name="q2" value="c" /> CSS</label>
+          <label><input type="radio" name="q2" value="d" /> Python</label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-card" id="card-q3">
+        <span class="q-number">Q3</span>
+        <p class="q-text">Inside which HTML element do we put JavaScript?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="a" /> &lt;js&gt;</label>
+          <label><input type="radio" name="q3" value="b" /> &lt;javascript&gt;</label>
+          <label><input type="radio" name="q3" value="c" /> &lt;script&gt;</label>
+          <label><input type="radio" name="q3" value="d" /> &lt;code&gt;</label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-card" id="card-q4">
+        <span class="q-number">Q4</span>
+        <p class="q-text">Which operator is used for strict equality in JavaScript?</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="a" /> ==</label>
+          <label><input type="radio" name="q4" value="b" /> ===</label>
+          <label><input type="radio" name="q4" value="c" /> !=</label>
+          <label><input type="radio" name="q4" value="d" /> =</label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question-card" id="card-q5">
+        <span class="q-number">Q5</span>
+        <p class="q-text">What does <code>console.log()</code> do in JavaScript?</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="a" /> Displays an alert box</label>
+          <label><input type="radio" name="q5" value="b" /> Prints output to the browser console</label>
+          <label><input type="radio" name="q5" value="c" /> Writes directly into the HTML</label>
+          <label><input type="radio" name="q5" value="d" /> Compiles the code</label>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button type="submit" class="btn btn-submit" id="btnSubmit">Submit Quiz</button>
+        <button type="button" class="btn btn-reset" id="btnReset">Reset Quiz</button>
+      </div>
+    </form>
+
+    <!-- Results Section -->
+    <section id="resultsSection" class="results-section hidden">
+      <h2 id="scoreHeading"></h2>
+      <p id="feedbackMessage"></p>
+      <ul id="answerDetails"></ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 Abdullah Fawad — Full-Stack Programming Lab</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

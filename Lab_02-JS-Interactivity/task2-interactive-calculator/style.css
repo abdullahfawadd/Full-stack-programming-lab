@@ -1,0 +1,251 @@
+/*
+ * ============================================================================
+ * Task 2: Interactive Calculator – Styles
+ * Lab 02 - JS Interactivity
+ * Full-Stack Programming Lab
+ *
+ * Author : Abdullah Fawad
+ * Date   : 2026-02-17
+ * ============================================================================
+ */
+
+/* ── Reset & Base ────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+/* ── Container ───────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.calc-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.calc-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.calc-header .subtitle {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────── */
+.calc-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Input Groups ────────────────────────────────────────────────────────── */
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.92rem;
+  color: #555;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.25s ease;
+  background: #fafafa;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input-field:focus {
+  border-color: #2c5364;
+  background: #fff;
+}
+
+select.input-field {
+  cursor: pointer;
+  background: #fafafa url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-calculate {
+  background: #2c5364;
+  color: #fff;
+}
+
+.btn-calculate:hover {
+  background: #203a43;
+}
+
+.btn-clear {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn-clear:hover {
+  background: #c0392b;
+}
+
+/* ── Result Box ──────────────────────────────────────────────────────────── */
+.result-box {
+  text-align: center;
+  padding: 1.25rem;
+  border-radius: 12px;
+  animation: fadeIn 0.35s ease;
+  margin-bottom: 0.5rem;
+}
+
+.result-box.positive {
+  background: #d4edda;
+  border: 2px solid #27ae60;
+}
+
+.result-box.negative {
+  background: #f8d7da;
+  border: 2px solid #e74c3c;
+}
+
+.result-box.zero {
+  background: #fff3cd;
+  border: 2px solid #f0ad4e;
+}
+
+.result-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+.result-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.result-box.positive .result-value {
+  color: #1e7e34;
+}
+
+.result-box.negative .result-value {
+  color: #c0392b;
+}
+
+.result-box.zero .result-value {
+  color: #856404;
+}
+
+/* ── Error Box ───────────────────────────────────────────────────────────── */
+.error-box {
+  text-align: center;
+  padding: 0.9rem;
+  background: #f8d7da;
+  border: 2px solid #e74c3c;
+  border-radius: 10px;
+  color: #c0392b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: shake 0.4s ease;
+}
+
+/* ── Utility ─────────────────────────────────────────────────────────────── */
+.hidden {
+  display: none;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  padding: 1.5rem 0 0.5rem;
+}
+
+/* ── Animations ──────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .calc-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .calc-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
