@@ -1,0 +1,111 @@
+<!--
+  ============================================================================
+  Task 3: Simple To-Do List
+  Lab 02 - JS Interactivity | Full-Stack Programming Lab
+
+  Author : Abdullah Fawad
+  Date   : 2026-02-17
+  Desc   : A to-do list with 3 fixed task input fields. Users can mark tasks
+           as complete or remove them. DOM manipulation updates status and
+           visibility; loops style all tasks uniformly.
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple To-Do List | Lab 02 – Abdullah Fawad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── Top Bar ──────────────────────────────────────────────────────── -->
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-label">Lab 02 &mdash; JS Interactivity</span>
+      <span class="topbar-divider"></span>
+      <span class="topbar-author">Abdullah Fawad</span>
+    </div>
+  </nav>
+
+  <!-- ── Main ─────────────────────────────────────────────────────────── -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Page Header -->
+      <header class="page-header">
+        <h1>Simple To-Do List</h1>
+        <p class="page-desc">
+          Enter up to three tasks below. Mark them complete or remove them as needed.
+        </p>
+      </header>
+
+      <!-- Task Inputs Card -->
+      <section class="card" id="inputCard">
+        <h2 class="card-title">Add Tasks</h2>
+
+        <div class="input-row">
+          <label class="field-label" for="taskInput1">Task 1</label>
+          <div class="field-group">
+            <input type="text" id="taskInput1" class="field-input" placeholder="e.g. Buy groceries" />
+            <button type="button" class="btn btn-primary btn-add" data-task="1">Add</button>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <label class="field-label" for="taskInput2">Task 2</label>
+          <div class="field-group">
+            <input type="text" id="taskInput2" class="field-input" placeholder="e.g. Read a chapter" />
+            <button type="button" class="btn btn-primary btn-add" data-task="2">Add</button>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <label class="field-label" for="taskInput3">Task 3</label>
+          <div class="field-group">
+            <input type="text" id="taskInput3" class="field-input" placeholder="e.g. Go for a walk" />
+            <button type="button" class="btn btn-primary btn-add" data-task="3">Add</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task List Card -->
+      <section class="card" id="listCard">
+        <div class="card-header">
+          <h2 class="card-title">Your Tasks</h2>
+          <span class="task-count" id="taskCount">0 tasks</span>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <p>No tasks yet. Add one above to get started.</p>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <button type="button" class="btn btn-secondary btn-reset hidden" id="btnResetAll">
+          Reset All
+        </button>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Abdullah Fawad &mdash; Full-Stack Programming Lab</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!--
+  ============================================================================
+  Task 4: Color Box Generator
+  Lab 02 - JS Interactivity | Full-Stack Programming Lab
+
+  Author : Abdullah Fawad
+  Date   : 2026-02-17
+  Desc   : A color generator with 3 input fields. Users enter a colour and
+           click Add to display a coloured div. Includes Clear All and
+           BOM-based browser/window info display.
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Box Generator | Lab 02 – Abdullah Fawad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── Top Bar ──────────────────────────────────────────────────────── -->
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-label">Lab 02 &mdash; JS Interactivity</span>
+      <span class="topbar-divider"></span>
+      <span class="topbar-author">Abdullah Fawad</span>
+    </div>
+  </nav>
+
+  <!-- ── Main ─────────────────────────────────────────────────────────── -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Page Header -->
+      <header class="page-header">
+        <h1>Color Box Generator</h1>
+        <p class="page-desc">
+          Enter a CSS colour in each field and click Add to generate coloured boxes.
+        </p>
+      </header>
+
+      <!-- BOM Info Banner (Bonus) -->
+      <div class="info-banner" id="bomInfo">
+        <span class="info-item" id="infoSize">Window: &mdash;</span>
+        <span class="info-divider"></span>
+        <span class="info-item" id="infoBrowser">Browser: &mdash;</span>
+      </div>
+
+      <!-- Colour Inputs Card -->
+      <section class="card">
+        <h2 class="card-title">Colour Inputs</h2>
+
+        <div class="input-row">
+          <label class="field-label" for="colorInput1">Colour 1</label>
+          <div class="field-group">
+            <input type="text" id="colorInput1" class="field-input" placeholder="e.g. #3b82f6 or tomato" />
+            <button type="button" class="btn btn-primary btn-add" data-color="1">Add</button>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <label class="field-label" for="colorInput2">Colour 2</label>
+          <div class="field-group">
+            <input type="text" id="colorInput2" class="field-input" placeholder="e.g. rgb(16,185,129)" />
+            <button type="button" class="btn btn-primary btn-add" data-color="2">Add</button>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <label class="field-label" for="colorInput3">Colour 3</label>
+          <div class="field-group">
+            <input type="text" id="colorInput3" class="field-input" placeholder="e.g. hsl(280,70%,50%)" />
+            <button type="button" class="btn btn-primary btn-add" data-color="3">Add</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Generated Boxes Area -->
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">Generated Boxes</h2>
+          <span class="box-count" id="boxCount">0 boxes</span>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <p>No boxes yet. Enter a colour above and click Add.</p>
+        </div>
+
+        <div id="boxGrid" class="box-grid"></div>
+
+        <button type="button" class="btn btn-secondary btn-clear hidden" id="btnClearAll">
+          Clear All Boxes
+        </button>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Abdullah Fawad &mdash; Full-Stack Programming Lab</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!--
+  ============================================================================
+  Task 5: Form Validation
+  Lab 02 - JS Interactivity | Full-Stack Programming Lab
+
+  Author : Abdullah Fawad
+  Date   : 2026-02-17
+  Desc   : A registration form with name, email, age, and password fields.
+           Each input is validated individually using functions and
+           conditional statements. Error messages appear dynamically via
+           DOM manipulation. On success, confirm() and alert() are used.
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Validation | Lab 02 – Abdullah Fawad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── Top Bar ──────────────────────────────────────────────────────── -->
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-label">Lab 02 &mdash; JS Interactivity</span>
+      <span class="topbar-divider"></span>
+      <span class="topbar-author">Abdullah Fawad</span>
+    </div>
+  </nav>
+
+  <!-- ── Main ─────────────────────────────────────────────────────────── -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Page Header -->
+      <header class="page-header">
+        <h1>Registration Form</h1>
+        <p class="page-desc">
+          Fill in the details below. All fields are validated before submission.
+        </p>
+      </header>
+
+      <!-- Form Card -->
+      <section class="card">
+        <form id="regForm" novalidate>
+
+          <!-- Name -->
+          <div class="field">
+            <label class="field-label" for="nameInput">Full Name</label>
+            <input type="text" id="nameInput" class="field-input" placeholder="e.g. Abdullah Fawad" />
+            <p class="field-error hidden" id="nameError"></p>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label class="field-label" for="emailInput">Email Address</label>
+            <input type="email" id="emailInput" class="field-input" placeholder="e.g. name@example.com" />
+            <p class="field-error hidden" id="emailError"></p>
+          </div>
+
+          <!-- Age -->
+          <div class="field">
+            <label class="field-label" for="ageInput">Age</label>
+            <input type="number" id="ageInput" class="field-input" placeholder="18–60" min="1" max="120" />
+            <p class="field-error hidden" id="ageError"></p>
+          </div>
+
+          <!-- Password -->
+          <div class="field">
+            <label class="field-label" for="passwordInput">Password</label>
+            <input type="password" id="passwordInput" class="field-input" placeholder="Minimum 6 characters" />
+            <p class="field-error hidden" id="passwordError"></p>
+          </div>
+
+          <!-- Global Messages -->
+          <div id="successBox" class="msg-box msg-success hidden">
+            <p id="successMessage"></p>
+          </div>
+
+          <!-- Actions -->
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="reset" class="btn btn-secondary" id="btnReset">Clear</button>
+          </div>
+
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Abdullah Fawad &mdash; Full-Stack Programming Lab</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
