@@ -12,7 +12,7 @@
 
 /* ===========================  DESIGN TOKENS  ============================= */
 :root {
-  --color-bg:            #f7f7f8;
+  --color-bg:            #f9fafb;
   --color-surface:       #ffffff;
   --color-text:          #111827;
   --color-text-secondary:#6b7280;
@@ -277,20 +277,37 @@ body {
   align-items: center;
   gap: var(--sp-3);
   padding: var(--sp-3) var(--sp-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
   animation: slideUp .25s var(--ease);
 }
 
+.task-item:last-child {
+  border-bottom: none;
+}
+
 .task-item.completed {
-  background: var(--color-success-bg);
-  border-color: var(--color-success);
+  opacity: 0.65;
 }
 
 .task-item.completed .task-text {
   text-decoration: line-through;
   color: var(--color-text-secondary);
+}
+
+/* Custom checkbox */
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+  transition: border-color var(--duration) var(--ease);
+}
+
+.task-checkbox:checked {
+  border-color: var(--color-primary);
 }
 
 .task-text {
@@ -299,6 +316,22 @@ body {
   font-weight: 500;
   color: var(--color-text);
   line-height: 1.4;
+  transition: color var(--duration) var(--ease),
+              text-decoration-color var(--duration) var(--ease);
+  text-decoration-color: transparent;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-text-secondary);
+  color: var(--color-text-secondary);
+}
+
+.completed-count {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-success);
+  margin-left: var(--sp-2);
 }
 
 .task-actions {

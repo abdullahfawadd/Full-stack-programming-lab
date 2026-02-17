@@ -15,7 +15,7 @@
 /* ===========================  DESIGN TOKENS  ============================= */
 :root {
   /* Colour */
-  --color-bg:          #f7f7f8;
+  --color-bg:          #f9fafb;
   --color-surface:     #ffffff;
   --color-text:        #111827;
   --color-text-secondary: #6b7280;
@@ -182,13 +182,11 @@ fieldset { border: none; }
 }
 
 .question-card.correct {
-  border-color: var(--color-success);
-  background: var(--color-success-bg);
+  border-left: 3px solid var(--color-success);
 }
 
 .question-card.incorrect {
-  border-color: var(--color-error);
-  background: var(--color-error-bg);
+  border-left: 3px solid var(--color-error);
 }
 
 /* Question Header */
@@ -426,6 +424,15 @@ fieldset { border: none; }
   font-size: 14px;
   color: var(--color-text-secondary);
   font-weight: 500;
+}
+
+.score-pct {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  text-align: center;
 }
 
 /* Results Meta */

@@ -105,8 +105,13 @@ function renderTasks() {
     btnResetAll.classList.remove("hidden");
   }
 
-  // Update count
-  taskCount.textContent = tasks.length + (tasks.length === 1 ? " task" : " tasks");
+  // Update count (with completed count)
+  const completedNum = tasks.filter(function (t) { return t.completed; }).length;
+  let countText = tasks.length + (tasks.length === 1 ? " task" : " tasks");
+  if (completedNum > 0) {
+    countText += " · " + completedNum + " done";
+  }
+  taskCount.textContent = countText;
 
   // Loop through tasks and create elements
   for (let i = 0; i < tasks.length; i++) {
@@ -116,23 +121,19 @@ function renderTasks() {
     const li = document.createElement("li");
     li.className = "task-item" + (task.completed ? " completed" : "");
 
+    // Checkbox for completion
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "task-checkbox";
+    checkbox.checked = task.completed;
+    checkbox.addEventListener("change", function () {
+      toggleComplete(task.id);
+    });
+
     // Task text
     const span = document.createElement("span");
     span.className = "task-text";
     span.textContent = task.text;
-
-    // Action buttons wrapper
-    const actionsDiv = document.createElement("div");
-    actionsDiv.className = "task-actions";
-
-    // Complete / Undo button
-    const btnComplete = document.createElement("button");
-    btnComplete.className = "btn-icon btn-complete";
-    btnComplete.title = task.completed ? "Undo" : "Complete";
-    btnComplete.innerHTML = task.completed ? "&#8634;" : "&#10003;";
-    btnComplete.addEventListener("click", function () {
-      toggleComplete(task.id);
-    });
 
     // Remove button
     const btnRemove = document.createElement("button");
@@ -143,11 +144,9 @@ function renderTasks() {
       removeTask(task.id);
     });
 
-    actionsDiv.appendChild(btnComplete);
-    actionsDiv.appendChild(btnRemove);
-
+    li.appendChild(checkbox);
     li.appendChild(span);
-    li.appendChild(actionsDiv);
+    li.appendChild(btnRemove);
     taskList.appendChild(li);
   }
 

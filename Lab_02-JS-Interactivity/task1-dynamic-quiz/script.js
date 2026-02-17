@@ -50,6 +50,12 @@ const progressFill    = document.getElementById("progressFill");
 const progressText    = document.getElementById("progressText");
 const scoreCircle     = document.getElementById("scoreCircle");
 const scoreNumber     = document.getElementById("scoreNumber");
+const scorePct        = document.getElementById("scorePct");
+const btnSubmit       = document.getElementById("btnSubmit");
+
+/* ── Disable Submit Until All Answered ───────────────────────────────────── */
+
+btnSubmit.disabled = true;
 
 /* ── Helper: Get Selected Value for a Question ───────────────────────────── */
 
@@ -80,6 +86,9 @@ function updateProgress() {
   const pct = (answered / TOTAL_QUESTIONS) * 100;
   progressFill.style.width = pct + "%";
   progressText.textContent = `${answered} of ${TOTAL_QUESTIONS} answered`;
+
+  // Enable submit only when all questions are answered
+  btnSubmit.disabled = (answered < TOTAL_QUESTIONS);
 }
 
 // Attach change listeners to all radio buttons for live progress
@@ -160,6 +169,7 @@ function displayResults(result) {
 
   // Score circle
   scoreNumber.textContent = score;
+  scorePct.textContent = Math.round(percentage) + "%";
   scoreCircle.classList.remove("excellent", "poor");
   if (percentage >= 60) {
     scoreCircle.classList.add("excellent");
@@ -244,6 +254,10 @@ btnReset.addEventListener("click", () => {
   // Reset score circle
   scoreCircle.classList.remove("excellent", "poor");
   scoreNumber.textContent = "0";
+  scorePct.textContent = "";
+
+  // Disable submit again
+  btnSubmit.disabled = true;
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 });

@@ -32,6 +32,8 @@
   <!-- ── Top Bar ──────────────────────────────────────────────────────── -->
   <nav class="topbar">
     <div class="topbar-inner">
+      <a href="../index.html" class="topbar-label" style="text-decoration:none;color:inherit;">&#8592; Dashboard</a>
+      <span class="topbar-divider"></span>
       <span class="topbar-label">Lab 02 &mdash; JS Interactivity</span>
       <span class="topbar-divider"></span>
       <span class="topbar-author">Abdullah Fawad</span>
@@ -80,6 +82,10 @@
             <label class="field-label" for="passwordInput">Password</label>
             <input type="password" id="passwordInput" class="field-input" placeholder="Minimum 6 characters" />
             <p class="field-error hidden" id="passwordError"></p>
+            <div class="strength-bar" id="strengthBar">
+              <div class="strength-fill" id="strengthFill"></div>
+            </div>
+            <p class="strength-label hidden" id="strengthLabel"></p>
           </div>
 
           <!-- Global Messages -->

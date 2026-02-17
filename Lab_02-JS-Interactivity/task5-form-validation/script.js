@@ -32,6 +32,8 @@ const ageError       = document.getElementById("ageError");
 const passwordError  = document.getElementById("passwordError");
 const successBox     = document.getElementById("successBox");
 const successMessage = document.getElementById("successMessage");
+const strengthFill   = document.getElementById("strengthFill");
+const strengthLabel  = document.getElementById("strengthLabel");
 
 /* ── Validation Functions ────────────────────────────────────────────────── */
 
@@ -141,6 +143,81 @@ function resetField(inputEl, errorEl) {
   errorEl.classList.add("hidden");
 }
 
+/* ── Password Strength Indicator ──────────────────────────────────────────── */
+
+/**
+ * Evaluates password strength and updates the visual indicator.
+ * @param {string} value
+ */
+function updatePasswordStrength(value) {
+  strengthFill.className = "strength-fill";
+  strengthLabel.className = "strength-label hidden";
+
+  if (value.length === 0) {
+    return;
+  }
+
+  let score = 0;
+  if (value.length >= 6) score++;
+  if (value.length >= 10) score++;
+  if (/[A-Z]/.test(value)) score++;
+  if (/[0-9]/.test(value)) score++;
+  if (/[^A-Za-z0-9]/.test(value)) score++;
+
+  if (score <= 2) {
+    strengthFill.classList.add("weak");
+    strengthLabel.textContent = "Weak";
+    strengthLabel.className = "strength-label weak";
+  } else if (score <= 3) {
+    strengthFill.classList.add("medium");
+    strengthLabel.textContent = "Medium";
+    strengthLabel.className = "strength-label medium";
+  } else {
+    strengthFill.classList.add("strong");
+    strengthLabel.textContent = "Strong";
+    strengthLabel.className = "strength-label strong";
+  }
+}
+
+/* ── Real-Time Validation on Input ───────────────────────────────────────── */
+
+nameInput.addEventListener("input", function () {
+  const err = validateName(nameInput.value);
+  if (err) {
+    showFieldError(nameInput, nameError, err);
+  } else {
+    clearFieldError(nameInput, nameError);
+  }
+});
+
+emailInput.addEventListener("input", function () {
+  const err = validateEmail(emailInput.value);
+  if (err) {
+    showFieldError(emailInput, emailError, err);
+  } else {
+    clearFieldError(emailInput, emailError);
+  }
+});
+
+ageInput.addEventListener("input", function () {
+  const err = validateAge(ageInput.value);
+  if (err) {
+    showFieldError(ageInput, ageError, err);
+  } else {
+    clearFieldError(ageInput, ageError);
+  }
+});
+
+passwordInput.addEventListener("input", function () {
+  updatePasswordStrength(passwordInput.value);
+  const err = validatePassword(passwordInput.value);
+  if (err) {
+    showFieldError(passwordInput, passwordError, err);
+  } else {
+    clearFieldError(passwordInput, passwordError);
+  }
+});
+
 /* ── Form Submission ─────────────────────────────────────────────────────── */
 
 regForm.addEventListener("submit", function (event) {
@@ -187,8 +264,11 @@ regForm.addEventListener("submit", function (event) {
     clearFieldError(passwordInput, passwordError);
   }
 
-  // If any field invalid, scroll to first error
+  // If any field invalid, scroll to first error and shake the card
   if (!isValid) {
+    const card = document.querySelector(".card");
+    card.classList.add("shake");
+    setTimeout(function () { card.classList.remove("shake"); }, 400);
     const firstError = document.querySelector(".input-error");
     if (firstError) {
       firstError.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -247,5 +327,7 @@ regForm.addEventListener("reset", function () {
     resetField(ageInput, ageError);
     resetField(passwordInput, passwordError);
     successBox.classList.add("hidden");
+    strengthFill.className = "strength-fill";
+    strengthLabel.className = "strength-label hidden";
   }, 0);
 });

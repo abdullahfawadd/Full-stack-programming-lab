@@ -133,6 +133,7 @@ function formatNumber(value) {
  */
 function showResult(a, b, operation, value) {
   errorBox.classList.add("hidden");
+  clearInputErrors();
 
   const displayValue = formatNumber(value);
   const symbol       = OP_SYMBOLS[operation] || "?";
@@ -163,6 +164,22 @@ function showError(message) {
   resultBox.classList.add("hidden");
   errorMessage.textContent = message;
   errorBox.classList.remove("hidden");
+
+  // Mark empty/invalid fields
+  if (numberAInput.value.trim() === "" || isNaN(Number(numberAInput.value))) {
+    numberAInput.classList.add("input-error");
+  }
+  if (numberBInput.value.trim() === "" || isNaN(Number(numberBInput.value))) {
+    numberBInput.classList.add("input-error");
+  }
+}
+
+/**
+ * Clears inline error state from inputs.
+ */
+function clearInputErrors() {
+  numberAInput.classList.remove("input-error");
+  numberBInput.classList.remove("input-error");
 }
 
 /* ── History ─────────────────────────────────────────────────────────────── */
@@ -201,6 +218,7 @@ function clearAll() {
   errorBox.classList.add("hidden");
   errorMessage.textContent = "";
 
+  clearInputErrors();
   numberAInput.focus();
 }
 

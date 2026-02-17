@@ -12,7 +12,7 @@
 
 /* ===========================  DESIGN TOKENS  ============================= */
 :root {
-  --color-bg:            #f7f7f8;
+  --color-bg:            #f9fafb;
   --color-surface:       #ffffff;
   --color-text:          #111827;
   --color-text-secondary:#6b7280;
@@ -270,12 +270,21 @@ body {
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   padding: var(--sp-2);
-  animation: scaleIn .25s var(--ease);
+  animation: fadeBoxIn .3s var(--ease);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease);
+}
+
+.color-box:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .color-box-label {
@@ -290,6 +299,38 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.color-box-copied {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s var(--ease);
+}
+
+.color-box-copied.show {
+  opacity: 1;
+}
+
+/* Color picker input alongside text input */
+.field-color-picker {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  cursor: pointer;
+  background: var(--color-surface);
+  flex-shrink: 0;
 }
 
 /* ============================  UTILITIES  ================================ */
@@ -310,8 +351,8 @@ body {
   to   { opacity: 1; }
 }
 
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.9); }
+@keyframes fadeBoxIn {
+  from { opacity: 0; transform: scale(0.92); }
   to   { opacity: 1; transform: scale(1); }
 }
 

@@ -12,7 +12,7 @@
 
 /* ===========================  DESIGN TOKENS  ============================= */
 :root {
-  --color-bg:            #f7f7f8;
+  --color-bg:            #f9fafb;
   --color-surface:       #ffffff;
   --color-text:          #111827;
   --color-text-secondary:#6b7280;
@@ -234,6 +234,51 @@ body {
 
 /* ============================  UTILITIES  ================================ */
 .hidden { display: none !important; }
+
+/* ======================  PASSWORD STRENGTH  ============================== */
+.strength-bar {
+  height: 4px;
+  border-radius: 100px;
+  margin-top: var(--sp-2);
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 100px;
+  transition: width .3s var(--ease), background .3s var(--ease);
+}
+
+.strength-fill.weak    { width: 33%; background: var(--color-error); }
+.strength-fill.medium  { width: 66%; background: #d97706; }
+.strength-fill.strong  { width: 100%; background: var(--color-success); }
+
+.strength-label {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.strength-label.weak   { color: var(--color-error); }
+.strength-label.medium { color: #d97706; }
+.strength-label.strong { color: var(--color-success); }
+
+/* ========================  SHAKE ANIMATION  ============================== */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-4px); }
+  40%      { transform: translateX(4px); }
+  60%      { transform: translateX(-2px); }
+  80%      { transform: translateX(2px); }
+}
+
+.shake {
+  animation: shake .3s var(--ease);
+}
 
 /* =============================  FOOTER  ================================== */
 .site-footer {

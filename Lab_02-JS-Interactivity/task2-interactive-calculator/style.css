@@ -15,7 +15,7 @@
 /* ===========================  DESIGN TOKENS  ============================= */
 :root {
   /* Colour */
-  --color-bg:          #f7f7f8;
+  --color-bg:          #f9fafb;
   --color-surface:     #ffffff;
   --color-text:        #111827;
   --color-text-secondary: #6b7280;
@@ -193,6 +193,14 @@ body {
   background: var(--color-surface);
 }
 
+.field-input.input-error {
+  border-color: var(--color-error);
+}
+
+.field-input.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(220,38,38,.10);
+}
+
 /* Operator dropdown */
 .field--op {
   max-width: 76px;
@@ -255,10 +263,12 @@ body {
 /* ===========================  RESULT BOX  ================================ */
 .result-box {
   text-align: center;
-  padding: var(--sp-5) var(--sp-4);
+  padding: var(--sp-8) var(--sp-4);
   border-radius: var(--radius-sm);
   margin-bottom: var(--sp-4);
   animation: slideUp .25s var(--ease);
+  transition: background var(--duration) var(--ease),
+              border-color var(--duration) var(--ease);
 }
 
 .result-box.positive {

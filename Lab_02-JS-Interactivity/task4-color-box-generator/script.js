@@ -28,6 +28,9 @@ const emptyState  = document.getElementById("emptyState");
 const btnClearAll = document.getElementById("btnClearAll");
 const infoSize    = document.getElementById("infoSize");
 const infoBrowser = document.getElementById("infoBrowser");
+const colorPicker1 = document.getElementById("colorPicker1");
+const colorPicker2 = document.getElementById("colorPicker2");
+const colorPicker3 = document.getElementById("colorPicker3");
 
 /* ── Box Storage ─────────────────────────────────────────────────────────── */
 
@@ -146,7 +149,25 @@ function createBoxElement(color) {
   label.className = "color-box-label";
   label.textContent = color;
 
+  // Click-to-copy tooltip
+  const copied = document.createElement("span");
+  copied.className = "color-box-copied";
+  copied.textContent = "Copied!";
+
   box.appendChild(label);
+  box.appendChild(copied);
+
+  box.addEventListener("click", function () {
+    // Copy color to clipboard
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(color);
+    }
+    copied.classList.add("show");
+    setTimeout(function () {
+      copied.classList.remove("show");
+    }, 1000);
+  });
+
   boxGrid.appendChild(box);
 }
 
@@ -184,6 +205,16 @@ for (let i = 0; i < colorInputs.length; i++) {
 
 // Clear All
 btnClearAll.addEventListener("click", clearAllBoxes);
+
+// Sync colour pickers with text inputs
+colorPicker1.addEventListener("input", function () { colorInput1.value = colorPicker1.value; });
+colorPicker2.addEventListener("input", function () { colorInput2.value = colorPicker2.value; });
+colorPicker3.addEventListener("input", function () { colorInput3.value = colorPicker3.value; });
+
+// Sync text inputs back to pickers when typing hex
+colorInput1.addEventListener("input", function () { if (/^#[0-9a-f]{6}$/i.test(colorInput1.value)) colorPicker1.value = colorInput1.value; });
+colorInput2.addEventListener("input", function () { if (/^#[0-9a-f]{6}$/i.test(colorInput2.value)) colorPicker2.value = colorInput2.value; });
+colorInput3.addEventListener("input", function () { if (/^#[0-9a-f]{6}$/i.test(colorInput3.value)) colorPicker3.value = colorInput3.value; });
 
 // Initial render
 renderBoxes();
