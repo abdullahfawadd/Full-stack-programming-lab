@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5 - Product Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <h1 class="page-title">Product Catalog</h1>
+      <p class="page-subtitle">Product records managed with Map.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="form-group">
+        <label class="form-label" for="searchInput">Search by Product ID</label>
+        <div class="form-row">
+          <input type="text" class="form-input" id="searchInput" placeholder="Enter product ID (e.g. P001)">
+          <button class="btn-primary" id="searchBtn">Search by ID</button>
+        </div>
+      </div>
+      <div id="searchResult"></div>
+      <p class="stat-line" id="productStat"></p>
+      <table class="data-table" id="productTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

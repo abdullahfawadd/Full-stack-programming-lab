@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 6 - Mini University Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <h1 class="page-title">Mini University Portal</h1>
+      <p class="page-subtitle">Students, courses, and data persistence in one system.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="two-col">
+      <div class="card">
+        <h2 class="section-heading">Students</h2>
+        <div class="form-group">
+          <label class="form-label" for="studentId">Student ID</label>
+          <input type="text" class="form-input" id="studentId" placeholder="Enter student ID">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="studentName">Student Name</label>
+          <input type="text" class="form-input" id="studentName" placeholder="Enter student name">
+        </div>
+        <button class="btn-primary" id="addStudentBtn">Add Student</button>
+        <p id="studentMsg"></p>
+        <table class="data-table" id="studentTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2 class="section-heading">Courses</h2>
+        <div class="form-group">
+          <label class="form-label" for="courseInput">Course Name</label>
+          <input type="text" class="form-input" id="courseInput" placeholder="Enter course name">
+        </div>
+        <button class="btn-primary" id="registerCourseBtn">Register Course</button>
+        <p id="courseMsg"></p>
+        <ul id="courseList"></ul>
+      </div>
+    </div>
+
+    <button class="btn-primary save-btn" id="saveBtn">Save All Data</button>
+    <div id="saveStatus"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
