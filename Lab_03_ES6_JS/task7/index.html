@@ -3,25 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Task 7 - Student Data with JSON</title>
+  <title>Task 7 — Student Data with JSON</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="page-header">
     <div class="header-inner">
-      <h1 class="page-title">Student Data with JSON</h1>
-      <p class="page-subtitle">Storing, parsing, and displaying structured student records.</p>
+      <div class="header-left">
+        <a href="../index.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 13L5 8l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </a>
+        <div>
+          <h1 class="page-title">Student Data with JSON</h1>
+          <p class="page-subtitle">Stringify, parse, destructure &amp; display structured student records.</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-outline" id="toggleViewBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 18l2-2-2-2M8 6L6 8l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4l-4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Toggle JSON View
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <div class="card-grid" id="studentGrid"></div>
-
-    <div class="card json-card">
-      <h2 class="section-heading">Raw JSON Output</h2>
-      <pre id="jsonOutput"></pre>
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="totalStudents">0</div>
+          <div class="stat-label">Students</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="totalCourses">0</div>
+          <div class="stat-label">Total Courses</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="avgAge">0</div>
+          <div class="stat-label">Avg. Age</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="jsonSize">0</div>
+          <div class="stat-label">JSON Bytes</div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <main class="container">
+    <!-- Student Cards -->
+    <section id="cardsSection" class="animate-in">
+      <div class="section-title-bar">
+        <h2 class="section-heading">Student Records</h2>
+        <span class="badge" id="recordBadge">0 records</span>
+      </div>
+      <div class="student-grid" id="studentGrid"></div>
+    </section>
+
+    <!-- JSON Output -->
+    <section id="jsonSection" class="animate-in" style="animation-delay:.1s">
+      <div class="section-title-bar">
+        <h2 class="section-heading">JSON Output</h2>
+        <button class="btn-text" id="copyBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:-2px;margin-right:4px"><rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" stroke-width="2"/></svg>
+          Copy
+        </button>
+      </div>
+      <div class="json-card">
+        <div class="json-tabs">
+          <button class="json-tab active" data-tab="pretty">Pretty</button>
+          <button class="json-tab" data-tab="raw">Raw</button>
+          <button class="json-tab" data-tab="parsed">Parsed Log</button>
+        </div>
+        <pre class="json-output" id="jsonPretty"></pre>
+        <pre class="json-output" id="jsonRaw" style="display:none"></pre>
+        <pre class="json-output" id="jsonParsed" style="display:none"></pre>
+      </div>
+    </section>
   </main>
+
+  <div class="toast" id="toast"></div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>&copy; 2026 Abdullah Fawad — Student Data with JSON</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

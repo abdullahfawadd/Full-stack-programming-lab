@@ -3,31 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Task 4 - Course Registration System</title>
+  <title>Task 4 — Course Registration System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="page-header">
     <div class="header-inner">
-      <h1 class="page-title">Course Registration System</h1>
-      <p class="page-subtitle">Unique course entries managed with Set.</p>
+      <div class="header-left">
+        <a href="../index.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 13L5 8l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </a>
+        <div>
+          <h1 class="page-title">Course Registration System</h1>
+          <p class="page-subtitle">Unique course entries managed with ES6 Set — register, search &amp; remove.</p>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <div class="card">
-      <div class="form-group">
-        <label class="form-label" for="courseInput">Course Name</label>
-        <div class="form-row">
-          <input type="text" class="form-input" id="courseInput" placeholder="Enter course name">
-          <button class="btn-primary" id="registerBtn">Register Course</button>
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="totalCourses">0</div>
+          <div class="stat-label">Registered Courses</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="recentAction">—</div>
+          <div class="stat-label">Last Action</div>
         </div>
       </div>
-      <p id="courseMsg"></p>
-      <p class="stat-line" id="courseStat"></p>
-      <ul id="courseList"></ul>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Register Form -->
+    <div class="card animate-in">
+      <div class="card-header">
+        <h2 class="section-heading">Register a New Course</h2>
+      </div>
+      <div class="card-body">
+        <form id="courseForm" class="register-form" autocomplete="off">
+          <div class="form-group">
+            <label class="form-label" for="courseInput">Course Name</label>
+            <input type="text" class="form-input" id="courseInput" placeholder="e.g. Artificial Intelligence" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="categorySelect">Category</label>
+            <select class="form-input" id="categorySelect">
+              <option value="Computer Science">Computer Science</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Business">Business</option>
+              <option value="General">General</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary btn-register">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Register Course
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Courses List -->
+    <div class="card animate-in" style="animation-delay:.1s; margin-top:24px;">
+      <div class="card-header">
+        <h2 class="section-heading">Registered Courses</h2>
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="7" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="text" id="searchInput" placeholder="Filter courses..." autocomplete="off">
+        </div>
+      </div>
+      <div id="courseList"></div>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#d2d2d7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#d2d2d7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p>No courses registered yet.</p>
+      </div>
     </div>
   </main>
+
+  <div class="toast" id="toast"></div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <p>&copy; 2026 Abdullah Fawad — Course Registration System</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

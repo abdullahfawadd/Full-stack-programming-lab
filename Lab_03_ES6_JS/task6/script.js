@@ -1,121 +1,223 @@
+/* ── Task 6: Mini University Portal — Production JS ── */
+/* Combines: ES6 Class, Map, Set, Promise */
+
+// ── Student Class ──
 class Student {
-  constructor(id, name) {
+  constructor(id, name, email) {
     this.id = id;
     this.name = name;
+    this.email = email;
+    this.createdAt = new Date().toLocaleString();
   }
 }
 
-let studentsMap = new Map();
-let coursesSet = new Set();
+// ── State (Map for students, Set for courses) ──
+const studentsMap = new Map();
+const coursesSet = new Set();
 
+// ── DOM ──
+const studentForm = document.getElementById('studentForm');
+const studentIdInput = document.getElementById('studentId');
+const studentNameInput = document.getElementById('studentName');
+const studentEmailInput = document.getElementById('studentEmail');
+const studentList = document.getElementById('studentList');
+const studentEmpty = document.getElementById('studentEmpty');
+const studentBadge = document.getElementById('studentBadge');
+
+const courseForm = document.getElementById('courseForm');
+const courseInput = document.getElementById('courseInput');
+const courseList = document.getElementById('courseList');
+const courseEmpty = document.getElementById('courseEmpty');
+const courseBadge = document.getElementById('courseBadge');
+
+const totalStudentsEl = document.getElementById('totalStudents');
+const totalCoursesEl = document.getElementById('totalCourses');
+const saveStatusEl = document.getElementById('saveStatus');
+
+// ── Render Students ──
 function renderStudents() {
-  const tbody = document.querySelector('#studentTable tbody');
-  tbody.innerHTML = '';
+  const count = studentsMap.size;
+  totalStudentsEl.textContent = count;
+  studentBadge.textContent = count;
 
+  if (count === 0) {
+    studentList.innerHTML = '';
+    studentEmpty.style.display = 'block';
+    return;
+  }
+  studentEmpty.style.display = 'none';
+
+  studentList.innerHTML = '';
   for (const [id, student] of studentsMap) {
-    tbody.innerHTML += `
-      <tr>
-        <td>${student.id}</td>
-        <td>${student.name}</td>
-      </tr>
+    studentList.innerHTML += `
+      <div class="list-item">
+        <div class="list-avatar student">${student.name.charAt(0)}</div>
+        <div class="list-info">
+          <div class="list-name">${student.name}</div>
+          <div class="list-meta">${student.id} · ${student.email}</div>
+        </div>
+        <button class="remove-btn" data-type="student" data-id="${id}" title="Remove">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
     `;
   }
 }
 
+// ── Render Courses ──
 function renderCourses() {
-  const courseList = document.getElementById('courseList');
-  courseList.innerHTML = '';
+  const count = coursesSet.size;
+  totalCoursesEl.textContent = count;
+  courseBadge.textContent = count;
 
+  if (count === 0) {
+    courseList.innerHTML = '';
+    courseEmpty.style.display = 'block';
+    return;
+  }
+  courseEmpty.style.display = 'none';
+
+  courseList.innerHTML = '';
   for (const course of coursesSet) {
-    const li = document.createElement('li');
-    li.textContent = course;
-    courseList.appendChild(li);
+    courseList.innerHTML += `
+      <div class="list-item">
+        <div class="list-avatar course">📚</div>
+        <div class="list-info">
+          <div class="list-name">${course}</div>
+        </div>
+        <button class="remove-btn" data-type="course" data-name="${course}" title="Remove">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    `;
   }
 }
 
-document.getElementById('addStudentBtn').addEventListener('click', () => {
-  const idInput = document.getElementById('studentId');
-  const nameInput = document.getElementById('studentName');
-  const studentMsg = document.getElementById('studentMsg');
-  const id = idInput.value.trim();
-  const name = nameInput.value.trim();
+// ── Add Student ──
+studentForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const id = studentIdInput.value.trim();
+  const name = studentNameInput.value.trim();
+  const email = studentEmailInput.value.trim();
 
-  if (!id || !name) {
-    studentMsg.textContent = 'Please fill in both fields.';
-    studentMsg.className = 'msg-error';
-    return;
-  }
+  if (!id || !name || !email) return;
 
   if (studentsMap.has(id)) {
-    studentMsg.textContent = 'Student ID already exists.';
-    studentMsg.className = 'msg-error';
+    showToast('Student ID already exists');
     return;
   }
 
-  const student = new Student(id, name);
+  const student = new Student(id, name, email);
   studentsMap.set(id, student);
-  studentMsg.textContent = '';
-  studentMsg.className = '';
-  idInput.value = '';
-  nameInput.value = '';
+  studentForm.reset();
   renderStudents();
+  markUnsaved();
+  showToast(`${name} added successfully`);
 });
 
-document.getElementById('registerCourseBtn').addEventListener('click', () => {
-  const courseInput = document.getElementById('courseInput');
-  const courseMsg = document.getElementById('courseMsg');
-  const value = courseInput.value.trim();
+// ── Register Course ──
+courseForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const name = courseInput.value.trim();
+  if (!name) return;
 
-  if (!value) {
-    courseMsg.textContent = 'Please enter a course name.';
-    courseMsg.className = 'msg-error';
+  if (coursesSet.has(name)) {
+    showToast('Course already registered');
     return;
   }
 
-  if (coursesSet.has(value)) {
-    courseMsg.textContent = 'Already registered.';
-    courseMsg.className = 'msg-error';
-    return;
-  }
-
-  coursesSet.add(value);
-  courseMsg.textContent = '';
-  courseMsg.className = '';
-  courseInput.value = '';
+  coursesSet.add(name);
+  courseForm.reset();
   renderCourses();
+  markUnsaved();
+  showToast(`"${name}" registered`);
 });
 
+// ── Remove (delegation) ──
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.remove-btn');
+  if (!btn) return;
+
+  if (btn.dataset.type === 'student') {
+    const id = btn.dataset.id;
+    const name = studentsMap.get(id)?.name || '';
+    studentsMap.delete(id);
+    renderStudents();
+    markUnsaved();
+    showToast(`${name} removed`);
+  }
+
+  if (btn.dataset.type === 'course') {
+    const name = btn.dataset.name;
+    coursesSet.delete(name);
+    renderCourses();
+    markUnsaved();
+    showToast(`"${name}" removed`);
+  }
+});
+
+// ── Save Data (Promise simulation) ──
 function saveData() {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve('Data saved successfully.');
-    }, 1500);
+      // Simulate occasional failure (10% chance)
+      if (Math.random() < 0.1) {
+        reject(new Error('Server timeout — please try again.'));
+      } else {
+        resolve({
+          students: studentsMap.size,
+          courses: coursesSet.size,
+          timestamp: new Date().toLocaleString(),
+        });
+      }
+    }, 1800);
   });
 }
 
-document.getElementById('saveBtn').addEventListener('click', () => {
+document.getElementById('saveBtn').addEventListener('click', async () => {
+  const overlay = document.getElementById('saveOverlay');
   const saveBtn = document.getElementById('saveBtn');
-  const saveStatus = document.getElementById('saveStatus');
-
+  overlay.classList.add('active');
   saveBtn.disabled = true;
-  saveBtn.textContent = 'Saving...';
 
-  saveData()
-    .then(msg => {
-      saveStatus.innerHTML = `<div class="alert-success">${msg}</div>`;
-      saveBtn.disabled = false;
-      saveBtn.textContent = 'Save All Data';
-    })
-    .catch(() => {
-      saveStatus.innerHTML = '<div class="alert-error">Failed to save data.</div>';
-      saveBtn.disabled = false;
-      saveBtn.textContent = 'Save All Data';
-    });
-
-  setTimeout(() => {
-    saveStatus.innerHTML = '';
-  }, 4500);
+  try {
+    const result = await saveData();
+    overlay.classList.remove('active');
+    saveBtn.disabled = false;
+    saveStatusEl.textContent = 'Saved ✓';
+    saveStatusEl.style.color = 'var(--success)';
+    showToast(`Saved ${result.students} students & ${result.courses} courses`);
+  } catch (err) {
+    overlay.classList.remove('active');
+    saveBtn.disabled = false;
+    saveStatusEl.textContent = 'Failed ✗';
+    saveStatusEl.style.color = 'var(--danger)';
+    showToast(err.message);
+  }
 });
+
+function markUnsaved() {
+  saveStatusEl.textContent = 'Unsaved';
+  saveStatusEl.style.color = 'var(--text-secondary)';
+}
+
+// ── Toast ──
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// ── Init with some data ──
+const defaultStudents = [
+  new Student('STU001', 'Abdullah Fawad', 'abdullahfawad.dev@gmail.com'),
+  new Student('STU002', 'Ali Ahmed', 'ali@university.edu'),
+  new Student('STU003', 'Sara Khan', 'sara@university.edu'),
+];
+defaultStudents.forEach(s => studentsMap.set(s.id, s));
+
+['Web Development', 'Data Structures', 'Machine Learning', 'Operating Systems'].forEach(c => coursesSet.add(c));
 
 renderStudents();
 renderCourses();
