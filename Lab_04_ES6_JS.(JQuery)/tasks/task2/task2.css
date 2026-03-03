@@ -1,0 +1,123 @@
+/* Task 2 — Animated Image Gallery */
+#lab2-root .gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+#lab2-root .gallery__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+}
+#lab2-root .gallery__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+#lab2-root .gallery__image.is-active {
+  display: block;
+}
+/* Overlay arrows on the image stage */
+#lab2-root .gallery__overlay-nav {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-3);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-fast) ease;
+}
+#lab2-root .gallery__stage:hover .gallery__overlay-nav {
+  opacity: 1;
+}
+#lab2-root .gallery__arrow {
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  color: var(--color-gray-800);
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  transition: background var(--duration-fast) ease, transform var(--duration-fast) ease;
+  cursor: pointer;
+}
+#lab2-root .gallery__arrow:hover {
+  background: #fff;
+  transform: scale(1.08);
+}
+#lab2-root .gallery__caption {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  min-height: 1.6em;
+  font-style: italic;
+  letter-spacing: .01em;
+}
+#lab2-root .gallery__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+#lab2-root .gallery__counter {
+  font-size: var(--text-xs);
+  color: var(--color-gray-400);
+  font-variant-numeric: tabular-nums;
+  min-width: 60px;
+  text-align: center;
+  font-weight: 500;
+}
+#lab2-root #lab2-autoplay.is-active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+#lab2-root .gallery__dots {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+}
+#lab2-root .gallery__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-gray-300);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--duration-fast) ease, transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+}
+#lab2-root .gallery__dot.is-active {
+  background: var(--color-primary);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 3px rgba(67,56,202,.15);
+}
+#lab2-root .gallery__dot:hover:not(.is-active) {
+  background: var(--color-gray-400);
+  transform: scale(1.15);
+}
+#lab2-root .gallery__hint {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-gray-400);
+  letter-spacing: .02em;
+}
+
+@media (max-width: 600px) {
+  #lab2-root .gallery__overlay-nav {
+    display: none;
+  }
+}

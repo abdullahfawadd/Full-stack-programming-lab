@@ -1,0 +1,98 @@
+/* Task 1 — Dynamic List Manager */
+#lab1-root .list-header {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+#lab1-root .list-header h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-1);
+  letter-spacing: -.01em;
+}
+#lab1-root .list-header p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  line-height: 1.6;
+}
+#lab1-root .list-input-row {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+#lab1-root .list-input-row .form-input {
+  flex: 1;
+}
+#lab1-root .list-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) 0;
+}
+#lab1-root .list-toolbar__info {
+  font-size: var(--text-xs);
+  color: var(--color-gray-400);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+#lab1-root .item-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+#lab1-root .item-list__entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+#lab1-root .item-list__entry:hover {
+  background: var(--color-gray-50);
+  border-color: var(--color-gray-300);
+  box-shadow: var(--shadow-xs);
+  transform: translateX(2px);
+}
+#lab1-root .item-list__entry .item-index {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+#lab1-root .item-list__entry .item-text {
+  font-size: var(--text-sm);
+  color: var(--color-gray-800);
+  word-break: break-word;
+  flex: 1;
+  line-height: 1.5;
+}
+#lab1-root .item-list__entry .btn-delete {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-400);
+  transition: background var(--duration-fast) ease, color var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+#lab1-root .item-list__entry .btn-delete:hover {
+  background: var(--color-error-light);
+  color: var(--color-error);
+  transform: scale(1.1);
+}

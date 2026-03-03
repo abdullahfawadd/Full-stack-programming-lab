@@ -1,0 +1,172 @@
+<!--
+  ============================================================================
+  Task 1: Dynamic Quiz
+  Lab 02 - JS Interactivity
+  Full-Stack Programming Lab
+
+  Author : Abdullah Fawad
+  Date   : 2026-02-17
+  Desc   : A dynamic quiz application with 5 questions, automatic grading,
+           DOM-based result display, score-dependent feedback messages,
+           and a reset function.
+  ============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Quiz | Lab 02 – Abdullah Fawad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Minimal Top Bar -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="../index.html" class="topbar-label" style="text-decoration:none;color:inherit;">&#8592; Dashboard</a>
+        <span class="topbar-divider"></span>
+        <span class="topbar-label">Lab 02 &mdash; JS Interactivity</span>
+        <span class="topbar-divider"></span>
+        <span class="topbar-author">Abdullah Fawad</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+
+        <!-- Page Header -->
+        <div class="page-header">
+          <h1>Dynamic Quiz</h1>
+          <p class="page-desc">Answer all five questions below, then submit to see your results.</p>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-wrapper">
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span class="progress-label" id="progressText">0 / 5</span>
+        </div>
+
+        <!-- Quiz Form -->
+        <form id="quizForm" autocomplete="off">
+
+          <!-- Q1 -->
+          <section class="question-card" id="card-q1">
+            <div class="question-header">
+              <span class="question-num">Question 1</span>
+              <span class="question-badge" id="badge-q1"></span>
+            </div>
+            <p class="question-text">What does <strong>HTML</strong> stand for?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q1" value="a" /><span class="option-marker">A</span><span class="option-text">Hyper Trainer Marking Language</span></label>
+              <label class="option"><input type="radio" name="q1" value="b" /><span class="option-marker">B</span><span class="option-text">HyperText Markup Language</span></label>
+              <label class="option"><input type="radio" name="q1" value="c" /><span class="option-marker">C</span><span class="option-text">HyperText Marketing Language</span></label>
+              <label class="option"><input type="radio" name="q1" value="d" /><span class="option-marker">D</span><span class="option-text">None of the above</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Q2 -->
+          <section class="question-card" id="card-q2">
+            <div class="question-header">
+              <span class="question-num">Question 2</span>
+              <span class="question-badge" id="badge-q2"></span>
+            </div>
+            <p class="question-text">Which language is used for styling web pages?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q2" value="a" /><span class="option-marker">A</span><span class="option-text">HTML</span></label>
+              <label class="option"><input type="radio" name="q2" value="b" /><span class="option-marker">B</span><span class="option-text">JavaScript</span></label>
+              <label class="option"><input type="radio" name="q2" value="c" /><span class="option-marker">C</span><span class="option-text">CSS</span></label>
+              <label class="option"><input type="radio" name="q2" value="d" /><span class="option-marker">D</span><span class="option-text">Python</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Q3 -->
+          <section class="question-card" id="card-q3">
+            <div class="question-header">
+              <span class="question-num">Question 3</span>
+              <span class="question-badge" id="badge-q3"></span>
+            </div>
+            <p class="question-text">Inside which HTML element do we put JavaScript?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q3" value="a" /><span class="option-marker">A</span><span class="option-text">&lt;js&gt;</span></label>
+              <label class="option"><input type="radio" name="q3" value="b" /><span class="option-marker">B</span><span class="option-text">&lt;javascript&gt;</span></label>
+              <label class="option"><input type="radio" name="q3" value="c" /><span class="option-marker">C</span><span class="option-text">&lt;script&gt;</span></label>
+              <label class="option"><input type="radio" name="q3" value="d" /><span class="option-marker">D</span><span class="option-text">&lt;code&gt;</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Q4 -->
+          <section class="question-card" id="card-q4">
+            <div class="question-header">
+              <span class="question-num">Question 4</span>
+              <span class="question-badge" id="badge-q4"></span>
+            </div>
+            <p class="question-text">Which operator is used for strict equality in JavaScript?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q4" value="a" /><span class="option-marker">A</span><span class="option-text">==</span></label>
+              <label class="option"><input type="radio" name="q4" value="b" /><span class="option-marker">B</span><span class="option-text">===</span></label>
+              <label class="option"><input type="radio" name="q4" value="c" /><span class="option-marker">C</span><span class="option-text">!=</span></label>
+              <label class="option"><input type="radio" name="q4" value="d" /><span class="option-marker">D</span><span class="option-text">=</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Q5 -->
+          <section class="question-card" id="card-q5">
+            <div class="question-header">
+              <span class="question-num">Question 5</span>
+              <span class="question-badge" id="badge-q5"></span>
+            </div>
+            <p class="question-text">What does <code>console.log()</code> do in JavaScript?</p>
+            <fieldset class="options">
+              <label class="option"><input type="radio" name="q5" value="a" /><span class="option-marker">A</span><span class="option-text">Displays an alert box</span></label>
+              <label class="option"><input type="radio" name="q5" value="b" /><span class="option-marker">B</span><span class="option-text">Prints output to the browser console</span></label>
+              <label class="option"><input type="radio" name="q5" value="c" /><span class="option-marker">C</span><span class="option-text">Writes directly into the HTML</span></label>
+              <label class="option"><input type="radio" name="q5" value="d" /><span class="option-marker">D</span><span class="option-text">Compiles the code</span></label>
+            </fieldset>
+          </section>
+
+          <!-- Actions -->
+          <div class="actions">
+            <button type="submit" class="btn btn-primary" id="btnSubmit">Submit Quiz</button>
+            <button type="button" class="btn btn-secondary" id="btnReset">Reset</button>
+          </div>
+
+        </form>
+
+        <!-- Results -->
+        <section id="resultsSection" class="results-panel hidden">
+          <div class="results-header">
+            <div class="score-ring" id="scoreCircle">
+              <span class="score-num" id="scoreNumber">0</span>
+              <span class="score-sep">/</span>
+              <span class="score-den" id="scoreTotal">5</span>
+            </div>
+            <span class="score-pct" id="scorePct"></span>
+            <div class="results-meta">
+              <h2 id="scoreHeading" class="results-title"></h2>
+              <p id="feedbackMessage" class="results-feedback"></p>
+            </div>
+          </div>
+          <ul id="answerDetails" class="results-breakdown"></ul>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; 2026 Abdullah Fawad &mdash; Full-Stack Programming Lab</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

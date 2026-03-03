@@ -1,0 +1,120 @@
+/* Task 5 — Chained Style Editor */
+#lab5-root .editor-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+#lab5-root .editor-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  background: var(--bg-card);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+#lab5-root .editor-controls .control-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-1);
+}
+#lab5-root .control-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+#lab5-root .control-row label {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  min-width: 70px;
+}
+#lab5-root .size-display {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-gray-700);
+  min-width: 36px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+#lab5-root input[type="range"] {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--color-gray-200);
+  border-radius: 3px;
+  outline: none;
+}
+#lab5-root input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: var(--shadow-sm);
+}
+#lab5-root input[type="color"] {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  cursor: pointer;
+  background: none;
+}
+#lab5-root .toggle-group {
+  display: flex;
+  gap: var(--space-2);
+}
+#lab5-root .toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  color: var(--color-gray-600);
+  transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease, color var(--duration-fast) ease;
+}
+#lab5-root .toggle-btn:hover {
+  background: var(--color-gray-50);
+}
+#lab5-root .toggle-btn.is-active {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+#lab5-root .preview-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--duration-normal) ease;
+}
+#lab5-root .preview-text {
+  transition: font-size var(--duration-normal) ease, color var(--duration-normal) ease;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 100%;
+  word-break: break-word;
+}
+#lab5-root .reset-row {
+  padding-top: var(--space-2);
+}
+
+@media (max-width: 700px) {
+  #lab5-root .editor-layout {
+    grid-template-columns: 1fr;
+  }
+}

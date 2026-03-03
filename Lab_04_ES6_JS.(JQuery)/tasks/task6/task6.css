@@ -1,0 +1,59 @@
+/* Task 6 — API Data Fetcher */
+#lab6-root .fetch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+#lab6-root .fetch-header h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+#lab6-root .data-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+#lab6-root .data-card {
+  background: var(--bg-card);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  transition: box-shadow var(--duration-fast) ease;
+}
+#lab6-root .data-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+#lab6-root .data-card__title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
+}
+#lab6-root .data-card__body {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  line-height: 1.6;
+}
+#lab6-root .data-card__meta {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+#lab6-root .load-more-row {
+  text-align: center;
+  padding: var(--space-8) 0;
+}
+#lab6-root .loading-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-8) 0;
+  color: var(--color-gray-500);
+  font-size: var(--text-sm);
+}
