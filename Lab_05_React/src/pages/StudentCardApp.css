@@ -1,0 +1,31 @@
+.task-intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.task-intro code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgba(37, 99, 235, 0.1);
+  padding: 0.15em 0.45em;
+  border-radius: var(--radius-sm);
+  color: var(--color-accent-light);
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .student-grid {
+    grid-template-columns: 1fr;
+  }
+}

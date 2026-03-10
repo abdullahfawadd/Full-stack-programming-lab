@@ -1,0 +1,53 @@
+.greeting-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.greeting-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.greeting-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.greeting-text {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.greeting-name {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.greeting-time {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--color-text-muted);
+}
