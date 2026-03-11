@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your HOTSPRING account – view orders, edit profile, manage addresses, and more.">
+  <title>My Account – HOTSPRING Hot Tubs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">HOT<span>SPRING</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="category.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="category.html">All Hot Tubs</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=inflatable">Inflatable Spas</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=luxury">Luxury Collection</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=accessories">Accessories</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-icons align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="my-account.html"><i class="bi bi-person"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
+          <li class="nav-item position-relative">
+            <a class="nav-link" href="shopping/cart.html"><i class="bi bi-bag"></i><span class="cart-badge">3</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1 data-aos="fade-up">My Account</h1>
+      <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">My Account</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Account Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Sidebar -->
+        <div class="col-lg-3" data-aos="fade-right">
+          <div class="account-sidebar">
+            <div class="user-info">
+              <div class="avatar"><i class="bi bi-person-fill"></i></div>
+              <h5 class="mb-1">M Abdullah Fawad</h5>
+              <small>abdullah.fawad@email.com</small>
+            </div>
+            <nav class="sidebar-nav">
+              <a href="my-account.html" class="nav-link active"><i class="bi bi-speedometer2"></i> Dashboard</a>
+              <a href="profile/edit-account.html" class="nav-link"><i class="bi bi-person-gear"></i> Edit Account</a>
+              <a href="profile/order-summary.html" class="nav-link"><i class="bi bi-bag-check"></i> My Orders</a>
+              <a href="edit-billing-address.html" class="nav-link"><i class="bi bi-credit-card"></i> Billing Address</a>
+              <a href="edit-shipping-address.html" class="nav-link"><i class="bi bi-truck"></i> Shipping Address</a>
+              <a href="#" class="nav-link"><i class="bi bi-heart"></i> Wishlist</a>
+              <a href="login.html" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="col-lg-9" data-aos="fade-left">
+          <div class="dashboard-card mb-4">
+            <h4 class="mb-1">Welcome back, M Abdullah!</h4>
+            <p class="text-muted">From your account dashboard, you can view your recent orders, manage your addresses, and edit your account details.</p>
+          </div>
+
+          <!-- Stats -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-4">
+              <div class="dashboard-stat">
+                <div class="stat-icon" style="background:rgba(13,110,253,0.1);color:var(--primary);"><i class="bi bi-bag-check"></i></div>
+                <h3>12</h3>
+                <p>Total Orders</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="dashboard-stat">
+                <div class="stat-icon" style="background:rgba(20,184,166,0.1);color:var(--secondary);"><i class="bi bi-truck"></i></div>
+                <h3>2</h3>
+                <p>In Transit</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="dashboard-stat">
+                <div class="stat-icon" style="background:rgba(245,158,11,0.1);color:var(--accent);"><i class="bi bi-heart"></i></div>
+                <h3>5</h3>
+                <p>Wishlist Items</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Orders -->
+          <div class="dashboard-card mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="mb-0">Recent Orders</h5>
+              <a href="profile/order-summary.html" class="btn btn-sm btn-outline-primary">View All</a>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Product</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-semibold">#LX-2024-0012</td>
+                    <td>Mar 5, 2026</td>
+                    <td>Serenity Pro 6-Person</td>
+                    <td class="fw-semibold">$5,499.00</td>
+                    <td><span class="badge bg-warning text-dark">In Transit</span></td>
+                    <td><a href="profile/order-details.html" class="btn btn-sm btn-outline-primary">Details</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold">#LX-2024-0011</td>
+                    <td>Feb 18, 2026</td>
+                    <td>Spa Cover – Large</td>
+                    <td class="fw-semibold">$299.00</td>
+                    <td><span class="badge bg-success">Delivered</span></td>
+                    <td><a href="profile/order-details.html" class="btn btn-sm btn-outline-primary">Details</a></td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold">#LX-2024-0010</td>
+                    <td>Jan 29, 2026</td>
+                    <td>Water Test Kit Pro</td>
+                    <td class="fw-semibold">$49.99</td>
+                    <td><span class="badge bg-success">Delivered</span></td>
+                    <td><a href="profile/order-details.html" class="btn btn-sm btn-outline-primary">Details</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Addresses -->
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="dashboard-card h-100">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="mb-0">Billing Address</h5>
+                  <a href="edit-billing-address.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i> Edit</a>
+                </div>
+                <address class="text-muted mb-0">
+                  M Abdullah Fawad<br>
+                  House 42, Street 7<br>
+                  F-8/3<br>
+                  Islamabad, Islamabad Capital Territory 44000<br>
+                  Pakistan<br>
+                  <i class="bi bi-telephone me-1"></i>+92 311 6826766
+                </address>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="dashboard-card h-100">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="mb-0">Shipping Address</h5>
+                  <a href="edit-shipping-address.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i> Edit</a>
+                </div>
+                <address class="text-muted mb-0">
+                  M Abdullah Fawad<br>
+                  House 42, Street 7<br>
+                  F-8/3<br>
+                  Islamabad, Islamabad Capital Territory 44000<br>
+                  Pakistan<br>
+                  <i class="bi bi-telephone me-1"></i>+92 311 6826766
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand d-inline-block mb-3">HOT<span>SPRING</span></a>
+          <p>Premium hot tubs and wellness solutions designed for the modern Pakistani home. Engineered for comfort.</p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html">Home</a></li>
+            <li class="mb-2"><a href="about.html">About</a></li>
+            <li class="mb-2"><a href="category.html">Shop</a></li>
+            <li class="mb-2"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Account</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="my-account.html">My Account</a></li>
+            <li class="mb-2"><a href="shopping/cart.html">Shopping Cart</a></li>
+            <li class="mb-2"><a href="login.html">Login</a></li>
+            <li class="mb-2"><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Blue Area, Jinnah Avenue, Islamabad 44000</li>
+            <li class="mb-2"><i class="bi bi-telephone me-2"></i>+92 311 6826766</li>
+            <li class="mb-2"><i class="bi bi-envelope me-2"></i>info@hotspring.pk</li>
+            <li class="mb-2"><i class="bi bi-clock me-2"></i>Mon–Sat: 10 AM – 7 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p class="mb-0">&copy; 2026 HOTSPRING Pakistan. All rights reserved. | <a href="shopping/terms.html">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

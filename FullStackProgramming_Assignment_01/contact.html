@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with HOTSPRING Pakistan. Visit our Islamabad showroom, call us, or send a message for expert advice on hot tubs and spas.">
+  <title>Contact Us – HOTSPRING Pakistan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">HOT<span>SPRING</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="category.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+            <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+              <li><a class="dropdown-item" href="category.html">All Hot Tubs</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=inflatable">Inflatable Spas</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=luxury">Luxury Collection</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=accessories">Accessories</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-icons align-items-center">
+          <li class="nav-item"><a class="nav-link" href="login.html" title="Account"><i class="bi bi-person"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#" title="Wishlist"><i class="bi bi-heart"></i></a></li>
+          <li class="nav-item position-relative">
+            <a class="nav-link" href="shopping/cart.html" title="Cart"><i class="bi bi-bag"></i><span class="cart-badge">3</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1 data-aos="fade-up">Contact Us</h1>
+      <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Contact Info Cards -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+          <div class="contact-info-card">
+            <div class="icon-circle"><i class="bi bi-geo-alt-fill"></i></div>
+            <h5>Visit Us</h5>
+            <p>Blue Area, Jinnah Avenue<br>Islamabad 44000, Pakistan</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-info-card">
+            <div class="icon-circle"><i class="bi bi-telephone-fill"></i></div>
+            <h5>Call Us</h5>
+            <p>+92 311 6826766<br>Mon–Sat: 10 AM – 7 PM</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-info-card">
+            <div class="icon-circle"><i class="bi bi-envelope-fill"></i></div>
+            <h5>Email Us</h5>
+            <p>info@hotspring.pk<br>support@hotspring.pk</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form & Map -->
+      <div class="row g-5">
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="dashboard-card">
+            <h3 class="mb-1">Send Us a Message</h3>
+            <p class="text-muted mb-4">Have a question? Fill out the form and we'll get back to you within 24 hours.</p>
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label-custom" for="contactName">Full Name *</label>
+                  <input type="text" class="form-control form-control-custom" id="contactName" name="name" required minlength="2">
+                  <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-custom" for="contactEmail">Email Address *</label>
+                  <input type="email" class="form-control form-control-custom" id="contactEmail" name="email" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-custom" for="contactPhone">Phone Number</label>
+                  <input type="tel" class="form-control form-control-custom" id="contactPhone" name="phone" pattern="^[\d\s\-\+\(\)]{7,15}$">
+                  <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-custom" for="contactSubject">Subject *</label>
+                  <select class="form-select form-control-custom" id="contactSubject" name="subject" required>
+                    <option value="" selected disabled>Select a subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="sales">Sales Question</option>
+                    <option value="support">Technical Support</option>
+                    <option value="returns">Returns &amp; Warranty</option>
+                    <option value="consultation">Free Consultation</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a subject.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label-custom" for="contactMessage">Message *</label>
+                  <textarea class="form-control form-control-custom" id="contactMessage" name="message" rows="5" required minlength="10"></textarea>
+                  <div class="invalid-feedback">Please enter your message (at least 10 characters).</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="contactConsent" required>
+                    <label class="form-check-label" for="contactConsent">I agree to the <a href="shopping/terms.html">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a>.</label>
+                    <div class="invalid-feedback">You must agree before submitting.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary-custom btn-lg"><i class="bi bi-send me-2"></i>Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13278.262871481677!2d73.04739!3d33.7215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd07891722f%3A0x6059515c3f3285d!2sBlue%20Area%2C%20Islamabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="HOTSPRING Location – Islamabad"></iframe>
+          </div>
+          <div class="mt-4">
+            <h5>Business Hours</h5>
+            <table class="table table-sm">
+              <tbody>
+                <tr><td>Monday – Friday</td><td class="text-end fw-semibold">10:00 AM – 7:00 PM</td></tr>
+                <tr><td>Saturday</td><td class="text-end fw-semibold">10:00 AM – 5:00 PM</td></tr>
+                <tr><td>Sunday</td><td class="text-end fw-semibold text-danger">Closed</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-brand d-inline-block mb-3">HOT<span>SPRING</span></a>
+          <p>Premium hot tubs and wellness solutions designed for the modern Pakistani home. Engineered for comfort.</p>
+          <div class="social-icons mt-3">
+            <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html">Home</a></li>
+            <li class="mb-2"><a href="about.html">About</a></li>
+            <li class="mb-2"><a href="category.html">Shop</a></li>
+            <li class="mb-2"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Account</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="my-account.html">My Account</a></li>
+            <li class="mb-2"><a href="shopping/cart.html">Cart</a></li>
+            <li class="mb-2"><a href="login.html">Login</a></li>
+            <li class="mb-2"><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Blue Area, Jinnah Avenue, Islamabad 44000</li>
+            <li class="mb-2"><i class="bi bi-telephone me-2"></i>+92 311 6826766</li>
+            <li class="mb-2"><i class="bi bi-envelope me-2"></i>info@hotspring.pk</li>
+            <li class="mb-2"><i class="bi bi-clock me-2"></i>Mon–Sat: 10 AM – 7 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p class="mb-0">&copy; 2026 HOTSPRING Pakistan. All rights reserved. | <a href="shopping/terms.html">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

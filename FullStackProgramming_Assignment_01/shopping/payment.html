@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete your purchase securely with our checkout and payment form at HOTSPRING.">
+  <title>Checkout – HOTSPRING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">HOT<span>SPRING</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="../category.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../category.html">All Hot Tubs</a></li>
+              <li><a class="dropdown-item" href="../category.html?cat=inflatable">Inflatable Spas</a></li>
+              <li><a class="dropdown-item" href="../category.html?cat=luxury">Luxury Collection</a></li>
+              <li><a class="dropdown-item" href="../category.html?cat=accessories">Accessories</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-icons align-items-center">
+          <li class="nav-item"><a class="nav-link" href="../my-account.html"><i class="bi bi-person"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
+          <li class="nav-item position-relative"><a class="nav-link" href="cart.html"><i class="bi bi-bag"></i><span class="cart-badge">3</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1 data-aos="fade-up">Checkout</h1>
+      <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="cart.html">Cart</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Checkout Section -->
+  <section class="section-padding">
+    <div class="container">
+      <form id="paymentForm" novalidate>
+        <div class="row g-4">
+          <!-- Payment & Shipping -->
+          <div class="col-lg-7" data-aos="fade-up">
+            <!-- Shipping Info -->
+            <div class="dashboard-card mb-4">
+              <h4 class="mb-4"><i class="bi bi-truck me-2"></i>Shipping Information</h4>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="shipFirstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="shipFirstName" value="M Abdullah" required>
+                  <div class="invalid-feedback">First name is required.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="shipLastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="shipLastName" value="Fawad" required>
+                  <div class="invalid-feedback">Last name is required.</div>
+                </div>
+                <div class="col-12">
+                  <label for="shipAddress" class="form-label">Address <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="shipAddress" placeholder="Street address" value="House 42, Street 7, F-8/3" required>
+                  <div class="invalid-feedback">Address is required.</div>
+                </div>
+                <div class="col-12">
+                  <label for="shipAddress2" class="form-label">Address Line 2</label>
+                  <input type="text" class="form-control" id="shipAddress2" placeholder="Apt, suite, unit (optional)">
+                </div>
+                <div class="col-md-5">
+                  <label for="shipCity" class="form-label">City <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="shipCity" value="Islamabad" required>
+                  <div class="invalid-feedback">City is required.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="shipState" class="form-label">Province <span class="text-danger">*</span></label>
+                  <select class="form-select" id="shipState" required>
+                    <option value="">Select...</option>
+                    <option value="ICT" selected>Islamabad Capital Territory</option>
+                    <option value="PB">Punjab</option>
+                    <option value="SD">Sindh</option>
+                    <option value="KPK">Khyber Pakhtunkhwa</option>
+                    <option value="BA">Balochistan</option>
+                    <option value="GB">Gilgit-Baltistan</option>
+                    <option value="AJK">Azad Kashmir</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a province.</div>
+                </div>
+                <div class="col-md-3">
+                  <label for="shipZip" class="form-label">Postal Code <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="shipZip" pattern="[0-9]{5}" maxlength="5" value="44000" required>
+                  <div class="invalid-feedback">Valid postal code required.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="shipPhone" class="form-label">Phone <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="shipPhone" placeholder="+92 3XX XXXXXXX" value="+92 311 6826766" required>
+                  <div class="invalid-feedback">Phone number is required.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="shipEmail" class="form-label">Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="shipEmail" value="abdullah.fawad@email.com" required>
+                  <div class="invalid-feedback">Valid email is required.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="dashboard-card mb-4">
+              <h4 class="mb-4"><i class="bi bi-credit-card me-2"></i>Payment Method</h4>
+
+              <div class="payment-methods mb-4">
+                <div class="payment-method active" data-method="credit-card">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="methodCard" value="credit-card" checked>
+                  <label class="form-check-label" for="methodCard">
+                    <i class="bi bi-credit-card-2-front me-2"></i>Credit / Debit Card
+                  </label>
+                </div>
+                <div class="payment-method" data-method="paypal">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="methodPaypal" value="paypal">
+                  <label class="form-check-label" for="methodPaypal">
+                    <i class="bi bi-paypal me-2"></i>PayPal
+                  </label>
+                </div>
+                <div class="payment-method" data-method="bank-transfer">
+                  <input class="form-check-input" type="radio" name="paymentMethod" id="methodBank" value="bank-transfer">
+                  <label class="form-check-label" for="methodBank">
+                    <i class="bi bi-bank me-2"></i>Bank Transfer
+                  </label>
+                </div>
+              </div>
+
+              <!-- Credit Card Fields -->
+              <div id="creditCardFields">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="cardName" class="form-label">Name on Card <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="cardName" placeholder="Full name as displayed on card" value="M Abdullah Fawad" required>
+                    <div class="invalid-feedback">Name on card is required.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="cardNumber" class="form-label">Card Number <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                      <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                    </div>
+                    <div class="invalid-feedback">Valid card number is required.</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="cardExpMonth" class="form-label">Exp. Month <span class="text-danger">*</span></label>
+                    <select class="form-select" id="cardExpMonth" required>
+                      <option value="">Month</option>
+                      <option value="01">01 – January</option>
+                      <option value="02">02 – February</option>
+                      <option value="03">03 – March</option>
+                      <option value="04">04 – April</option>
+                      <option value="05">05 – May</option>
+                      <option value="06">06 – June</option>
+                      <option value="07">07 – July</option>
+                      <option value="08">08 – August</option>
+                      <option value="09">09 – September</option>
+                      <option value="10">10 – October</option>
+                      <option value="11">11 – November</option>
+                      <option value="12">12 – December</option>
+                    </select>
+                    <div class="invalid-feedback">Select month.</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="cardExpYear" class="form-label">Exp. Year <span class="text-danger">*</span></label>
+                    <select class="form-select" id="cardExpYear" required>
+                      <option value="">Year</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2029">2029</option>
+                      <option value="2030">2030</option>
+                    </select>
+                    <div class="invalid-feedback">Select year.</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="cardCvv" class="form-label">CVV <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <input type="password" class="form-control" id="cardCvv" maxlength="4" placeholder="•••" required>
+                      <span class="input-group-text" role="button" tabindex="0" data-bs-toggle="tooltip" data-bs-title="3-digit code on the back of your card"><i class="bi bi-question-circle"></i></span>
+                    </div>
+                    <div class="invalid-feedback">CVV is required.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PayPal Notice -->
+              <div id="paypalFields" class="d-none text-center py-4">
+                <i class="bi bi-paypal display-4 text-primary mb-3 d-block"></i>
+                <p class="text-muted">You will be redirected to PayPal to complete your payment securely.</p>
+              </div>
+
+              <!-- Bank Transfer Notice -->
+              <div id="bankFields" class="d-none py-4">
+                <div class="alert alert-info mb-0">
+                  <i class="bi bi-info-circle me-2"></i>
+                  <strong>Bank Transfer Instructions:</strong><br>
+                  After placing your order, you'll receive an email with bank transfer details. Please complete the transfer within 48 hours to confirm your order.
+                </div>
+              </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="dashboard-card">
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                <label class="form-check-label" for="agreeTerms">
+                  I agree to the <a href="terms.html" target="_blank">Terms &amp; Conditions</a> and <a href="#" target="_blank">Privacy Policy</a> <span class="text-danger">*</span>
+                </label>
+                <div class="invalid-feedback">You must agree to the terms before placing your order.</div>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="saveInfo">
+                <label class="form-check-label" for="saveInfo">Save my information for next time</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary Sidebar -->
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="cart-summary sticky-top" style="top: 100px;">
+              <h4 class="mb-4">Order Summary</h4>
+
+              <!-- Items -->
+              <div class="mb-4">
+                <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom">
+                  <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1572331165267-854da2b10ccc?w=64&h=64&fit=crop&auto=format&q=80" alt="Serenity Pro" class="rounded" width="64" height="64">
+                    <span class="badge bg-primary rounded-pill position-absolute top-0 start-100 translate-middle">1</span>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0 small">Serenity Pro 6-Person Hot Tub</h6>
+                    <small class="text-muted">Sandstone</small>
+                  </div>
+                  <span class="fw-semibold">PKR 1,050,000</span>
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom">
+                  <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbec6a?w=64&h=64&fit=crop&auto=format&q=80" alt="Spa Cover" class="rounded" width="64" height="64">
+                    <span class="badge bg-primary rounded-pill position-absolute top-0 start-100 translate-middle">1</span>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0 small">Premium Spa Cover – Large</h6>
+                    <small class="text-muted">Charcoal</small>
+                  </div>
+                  <span class="fw-semibold">PKR 57,000</span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=64&h=64&fit=crop&auto=format&q=80" alt="Spa Steps" class="rounded" width="64" height="64">
+                    <span class="badge bg-primary rounded-pill position-absolute top-0 start-100 translate-middle">1</span>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0 small">Deluxe Spa Steps</h6>
+                    <small class="text-muted">Espresso</small>
+                  </div>
+                  <span class="fw-semibold">PKR 28,500</span>
+                </div>
+              </div>
+
+              <hr>
+
+              <!-- Totals -->
+              <div class="d-flex justify-content-between mb-2"><span>Subtotal (3 items)</span><span class="fw-semibold">PKR 1,135,500</span></div>
+              <div class="d-flex justify-content-between mb-2"><span>Shipping</span><span class="fw-semibold text-success">Free</span></div>
+              <div class="d-flex justify-content-between mb-2"><span>Tax</span><span class="fw-semibold">PKR 96,500</span></div>
+              <hr>
+              <div class="d-flex justify-content-between mb-4">
+                <span class="fs-5 fw-bold">Total</span>
+                <span class="fs-5 fw-bold text-primary">PKR 1,232,000</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary-custom w-100 btn-lg" id="placeOrderBtn">
+                <i class="bi bi-lock me-2"></i>Place Order – PKR 1,232,000
+              </button>
+
+              <div class="mt-3 text-center">
+                <small class="text-muted"><i class="bi bi-shield-check me-1"></i>Your payment is secured with 256-bit SSL encryption</small>
+              </div>
+
+              <div class="mt-3 d-flex justify-content-center gap-3">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=50&h=30&fit=crop&auto=format&q=80" alt="Visa" class="rounded">
+                <img src="https://images.unsplash.com/photo-1556742524-750f9862833d?w=50&h=30&fit=crop&auto=format&q=80" alt="Mastercard" class="rounded">
+                <img src="https://images.unsplash.com/photo-1556742400-b5b7c512f564?w=50&h=30&fit=crop&auto=format&q=80" alt="Amex" class="rounded">
+                <img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=50&h=30&fit=crop&auto=format&q=80" alt="PayPal" class="rounded">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="../index.html" class="footer-brand d-inline-block mb-3">HOT<span>SPRING</span></a>
+          <p>Premium hot tubs and wellness solutions designed for the modern Pakistani home. Engineered for comfort.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled"><li class="mb-2"><a href="../index.html">Home</a></li><li class="mb-2"><a href="../about.html">About</a></li><li class="mb-2"><a href="../category.html">Shop</a></li><li class="mb-2"><a href="../contact.html">Contact</a></li></ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Account</h5>
+          <ul class="list-unstyled"><li class="mb-2"><a href="../my-account.html">My Account</a></li><li class="mb-2"><a href="cart.html">Cart</a></li><li class="mb-2"><a href="../login.html">Login</a></li></ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Blue Area, Jinnah Avenue, Islamabad 44000</li>
+            <li class="mb-2"><i class="bi bi-telephone me-2"></i>+92 311 6826766</li>
+            <li class="mb-2"><i class="bi bi-envelope me-2"></i>info@hotspring.pk</li>
+            <li class="mb-2"><i class="bi bi-clock me-2"></i>Mon–Sat: 10 AM – 7 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center"><p class="mb-0">&copy; 2026 HOTSPRING Pakistan. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

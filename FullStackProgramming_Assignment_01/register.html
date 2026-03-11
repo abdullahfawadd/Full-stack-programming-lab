@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a HOTSPRING account to shop hot tubs, track orders, and access exclusive deals.">
+  <title>Register – HOTSPRING Pakistan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">HOT<span>SPRING</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="category.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="category.html">All Hot Tubs</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=inflatable">Inflatable Spas</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=luxury">Luxury Collection</a></li>
+              <li><a class="dropdown-item" href="category.html?cat=accessories">Accessories</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-icons align-items-center">
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-person"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-heart"></i></a></li>
+          <li class="nav-item position-relative">
+            <a class="nav-link" href="shopping/cart.html"><i class="bi bi-bag"></i><span class="cart-badge">3</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Register Section -->
+  <section class="auth-section">
+    <div class="container">
+      <div class="auth-card auth-card-wide" data-aos="fade-up">
+        <div class="row g-0">
+          <div class="col-lg-5 auth-sidebar">
+            <div>
+              <h3>Join HOTSPRING</h3>
+              <p>Create an account to enjoy member-exclusive benefits, track orders, and save your favorites.</p>
+              <ul class="list-unstyled mt-4 text-start" style="opacity:0.9;">
+                <li class="mb-2"><i class="bi bi-check-circle me-2"></i>Exclusive member discounts</li>
+                <li class="mb-2"><i class="bi bi-check-circle me-2"></i>Order tracking &amp; history</li>
+                <li class="mb-2"><i class="bi bi-check-circle me-2"></i>Wishlist &amp; saved items</li>
+                <li class="mb-2"><i class="bi bi-check-circle me-2"></i>Priority customer support</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="p-4 p-lg-5">
+              <div class="auth-header">
+                <h2>Create Account</h2>
+                <p>Fill in the details below to get started</p>
+              </div>
+
+              <form id="registerForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label-custom" for="regFirstName">First Name *</label>
+                    <input type="text" class="form-control form-control-custom" id="regFirstName" name="firstName" required minlength="2">
+                    <div class="invalid-feedback">First name is required (min 2 characters).</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label-custom" for="regLastName">Last Name *</label>
+                    <input type="text" class="form-control form-control-custom" id="regLastName" name="lastName" required minlength="2">
+                    <div class="invalid-feedback">Last name is required (min 2 characters).</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label-custom" for="regEmail">Email Address *</label>
+                    <input type="email" class="form-control form-control-custom" id="regEmail" name="email" placeholder="you@example.com" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label-custom" for="regPhone">Phone Number</label>
+                    <input type="tel" class="form-control form-control-custom" id="regPhone" name="phone" pattern="^[\d\s\-\+\(\)]{7,15}$">
+                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label-custom" for="regPassword">Password *</label>
+                    <div class="input-group">
+                      <input type="password" class="form-control form-control-custom" id="regPassword" name="password" required minlength="8">
+                      <button class="btn btn-outline-secondary" type="button" id="toggleRegPwd" aria-label="Toggle password visibility"><i class="bi bi-eye"></i></button>
+                    </div>
+                    <div class="password-strength mt-2">
+                      <div class="strength-bar" id="passwordStrengthBar"></div>
+                    </div>
+                    <small class="text-muted" id="passwordStrengthText">Min 8 characters with letters &amp; numbers</small>
+                    <div class="invalid-feedback">Password must be at least 8 characters.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label-custom" for="regConfirmPassword">Confirm Password *</label>
+                    <input type="password" class="form-control form-control-custom" id="regConfirmPassword" name="confirmPassword" required>
+                    <div class="invalid-feedback">Passwords do not match.</div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="regTerms" required>
+                      <label class="form-check-label" for="regTerms">I agree to the <a href="shopping/terms.html">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a> *</label>
+                      <div class="invalid-feedback">You must agree to the terms.</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="regNewsletter">
+                      <label class="form-check-label" for="regNewsletter">Subscribe to our newsletter for exclusive offers</label>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary-custom w-100 btn-lg">
+                      <i class="bi bi-person-plus me-2"></i>Create Account
+                    </button>
+                  </div>
+                </div>
+
+                <div class="auth-divider">
+                  <span>OR</span>
+                </div>
+
+                <div class="social-login mb-4">
+                  <button type="button" class="btn"><i class="bi bi-google me-2"></i>Google</button>
+                  <button type="button" class="btn"><i class="bi bi-facebook me-2"></i>Facebook</button>
+                </div>
+
+                <p class="text-center text-muted mb-0">Already have an account? <a href="login.html" class="fw-semibold">Sign In</a></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom text-center" style="border:none; margin:0;">
+        <p class="mb-0">&copy; 2026 HOTSPRING Pakistan. All rights reserved. | <a href="shopping/terms.html">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-chevron-up"></i></button>
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
