@@ -1,0 +1,38 @@
+export const labTasks = [ 
+  { 
+    id: '01', 
+    label: 'Lab Task 1', 
+    title: 'Counter Application', 
+    route: '/counter-app', 
+    accent: 'React State', 
+    summary: 'A clean counter with increment, decrement, reset, and a safe zero boundary.', 
+    highlights: ['useState', 'Guarded decrement', 'Clear feedback'], 
+  }, 
+  { 
+    id: '02', 
+    label: 'Lab Task 2', 
+    title: 'User Form App', 
+    route: '/user-form-app', 
+    accent: 'Forms', 
+    summary: 'A controlled form that captures input, shows the submitted snapshot, and clears fields.', 
+    highlights: ['Controlled inputs', 'onChange events', 'Submit flow'], 
+  }, 
+  { 
+    id: '03', 
+    label: 'Lab Task 3', 
+    title: 'Interactive Buttons App', 
+    route: '/event-app', 
+    accent: 'Events', 
+    summary: 'An event-focused UI with hover reactions, alerts, inline messages, and background changes.', 
+    highlights: ['onClick', 'onMouseOver', 'Dynamic styling'], 
+  }, 
+  { 
+    id: '04', 
+    label: 'Lab Task 4', 
+    title: 'Multi-Page Website', 
+    route: '/routing-app/home', 
+    accent: 'Routing', 
+    summary: 'A mini website with Link navigation, nested routes, products, contact form, and 404 handling.', 
+    highlights: ['Link + Routes', 'Products page', 'Nested 404'], 
+  }, 
+]
