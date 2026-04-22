@@ -1,180 +1,167 @@
-.home {
+.dashboard {
   display: grid;
-  gap: 1.4rem;
+  gap: 1.15rem;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(250px, 0.75fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
   gap: 1rem;
 }
 
-.heroCopy {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.4rem, 3vw, 2.4rem);
-  background: linear-gradient(150deg, #fffcf6 0%, #eaf6f4 100%);
+.heroContent,
+.identityCard,
+.taskSection,
+.taskCard {
+  border: 1px solid var(--line);
+  background: var(--surface);
   box-shadow: var(--shadow-soft);
 }
 
-.eyebrow {
+.heroContent {
+  border-radius: var(--radius-lg);
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  animation: fade-up 0.5s ease both;
+}
+
+.kicker {
   margin: 0;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--brand-strong);
+  color: var(--accent);
 }
 
-.heroCopy h1 {
+.heroContent h1 {
   margin: 0.8rem 0 0;
-  font-size: clamp(1.9rem, 4vw, 3rem);
-  max-width: 22ch;
+  font-size: clamp(2rem, 4.2vw, 3.35rem);
+  max-width: 17ch;
+  color: var(--brand);
 }
 
-.heroCopy p {
-  margin: 0.95rem 0 0;
-  max-width: 60ch;
+.heroContent p {
+  margin: 1rem 0 0;
+  max-width: 68ch;
 }
 
-.ctaRow {
+.heroActions {
   margin-top: 1.3rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.6rem;
 }
 
-.primaryCta,
-.secondaryCta {
+.primaryButton,
+.secondaryButton {
   border-radius: 999px;
-  padding: 0.62rem 1.06rem;
+  padding: 0.62rem 1.05rem;
   font-weight: 600;
   font-size: 0.92rem;
+  border: 1px solid transparent;
 }
 
-.primaryCta {
+.primaryButton {
   background: var(--brand);
   color: #ffffff;
 }
 
-.secondaryCta {
-  border: 1px solid var(--border);
-  background: #ffffff;
+.secondaryButton {
+  border-color: var(--line);
+  background: var(--surface-muted);
 }
 
-.heroPanel {
-  border: 1px solid var(--border);
+.identityCard {
   border-radius: var(--radius-lg);
-  padding: 1.3rem;
-  background: var(--surface);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  box-shadow: var(--shadow-soft);
+  padding: 1.25rem;
+  animation: fade-up 0.5s ease both;
+  animation-delay: 140ms;
 }
 
-.heroPanel h2 {
+.identityCard h2 {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
-.heroPanel ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.identityCard dl {
+  margin-top: 0.9rem;
   display: grid;
-  gap: 0.55rem;
+  gap: 0.75rem;
 }
 
-.heroPanel li {
-  position: relative;
-  padding-left: 1.1rem;
+.identityCard dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--muted);
-}
-
-.heroPanel li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.48rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--brand) 0%, #1b9d93 100%);
-}
-
-.inlineLink {
-  color: var(--brand-strong);
   font-weight: 700;
 }
 
-.featured {
-  border: 1px solid var(--border);
+.identityCard dd {
+  margin-top: 0.2rem;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.taskSection {
   border-radius: var(--radius-lg);
-  padding: clamp(1.2rem, 2.8vw, 1.8rem);
-  background: var(--surface-strong);
-  box-shadow: var(--shadow-soft);
+  padding: clamp(1.2rem, 2.8vw, 1.75rem);
+  animation: fade-up 0.5s ease both;
+  animation-delay: 220ms;
 }
 
-.sectionHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.7rem;
-  flex-wrap: wrap;
-}
-
-.sectionHeader h2 {
+.taskSection h2 {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: clamp(1.25rem, 2.8vw, 1.8rem);
 }
 
-.sectionHeader a {
-  font-weight: 700;
-  color: var(--brand-strong);
-}
-
-.featureGrid {
+.taskGrid {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 0.8rem;
 }
 
-.featureCard {
-  border: 1px solid var(--border);
-  border-radius: 16px;
+.taskCard {
+  border-radius: var(--radius-md);
   padding: 1rem;
-  background: #ffffff;
   display: grid;
-  gap: 0.35rem;
+  gap: 0.55rem;
+  animation: fade-up 0.45s ease both;
 }
 
-.featureCard p {
-  margin: 0;
-  font-size: 0.8rem;
+.taskCard span {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid var(--line);
+  background: var(--surface-muted);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
-  color: var(--brand-strong);
+  color: var(--brand);
 }
 
-.featureCard h3 {
+.taskCard p {
   margin: 0;
-  font-size: 1.08rem;
 }
 
-.featureCard span {
-  color: var(--ink);
-  font-weight: 700;
-}
-
-.featureCard a {
+.taskCard a {
   margin-top: 0.2rem;
-  color: var(--accent);
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.9rem;
+  background: var(--surface-muted);
+  color: var(--brand);
   font-weight: 700;
-  font-size: 0.9rem;
+}
+
+.taskCard a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 @media (max-width: 880px) {

@@ -1,0 +1,94 @@
+.wrapper {
+  display: grid;
+  gap: 1rem;
+}
+
+.header,
+.card {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.header {
+  border-radius: var(--radius-lg);
+  padding: clamp(1.2rem, 2.8vw, 1.9rem);
+  animation: fade-up 0.5s ease both;
+}
+
+.header p {
+  margin: 0;
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.header h1 {
+  margin: 0.7rem 0 0;
+  font-size: clamp(1.75rem, 3.5vw, 2.55rem);
+}
+
+.header span {
+  display: block;
+  margin-top: 0.85rem;
+  max-width: 70ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.8rem;
+}
+
+.card {
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: grid;
+  gap: 0.55rem;
+  animation: fade-up 0.45s ease both;
+}
+
+.card h2 {
+  margin: 0;
+  color: var(--brand);
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card a {
+  width: fit-content;
+  margin-top: 0.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--brand);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.5rem 0.85rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.actions a {
+  border-radius: 999px;
+  padding: 0.58rem 0.92rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.actions a:last-child {
+  border-color: transparent;
+  color: #ffffff;
+  background: var(--brand);
+}

@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { DM_Sans, Sora } from "next/font/google";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
 
-const headingFont = Sora({
+const headingFont = Space_Grotesk({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["500", "600", "700"],
 });
 
-const bodyFont = DM_Sans({
+const bodyFont = Manrope({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -18,11 +18,11 @@ const bodyFont = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Aster Studio",
-    template: "%s | Aster Studio",
+    default: "Lab 08 Dashboard",
+    template: "%s | Lab 08 Dashboard",
   },
   description:
-    "A modern multi-page Next.js application with dynamic product routing and reusable layout components.",
+    "Professional Next.js lab project with dashboard-first flow, multi-page task navigation, and dynamic product routing.",
 };
 
 export default function RootLayout({

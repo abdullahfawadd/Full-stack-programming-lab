@@ -4,24 +4,24 @@ import styles from "./about.module.css";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about the design and engineering principles behind this Next.js app.",
+  description: "Project overview for Task 1 multi-page architecture and quality standards.",
 };
 
 const principles = [
   {
-    title: "Design with intent",
+    title: "Clear navigation architecture",
     detail:
-      "Every section has a specific communication goal, from hierarchy in typography to spacing rhythm and contrast choices.",
+      "The flow begins at Dashboard and then branches to Task 1 and Task 2, ensuring users understand the assignment structure immediately.",
   },
   {
-    title: "Code for maintainability",
+    title: "Professional implementation",
     detail:
-      "Reusable components, typed data models, and modular styles keep the project easy to scale without introducing fragile coupling.",
+      "Shared layout components, typed product data, and modular styles deliver clean maintainability and production readiness.",
   },
   {
-    title: "Ship with confidence",
+    title: "University submission context",
     detail:
-      "The app uses App Router conventions, metadata per route, and production scripts ready for build, linting, and deployment.",
+      "This project is built and presented by M Abdullah (232052), Air University Islamabad, with focus on UI quality and best practices.",
   },
 ];
 
@@ -30,10 +30,10 @@ export default function AboutPage() {
     <article className={styles.about}>
       <header className={styles.header}>
         <p>About</p>
-        <h1>Engineering quality and visual craft in one workflow.</h1>
+        <h1>Project intent, structure, and quality approach.</h1>
         <span>
-          This lab project demonstrates how modern Next.js applications can be structured
-          with clarity while still delivering a polished, brand-focused interface.
+          This page explains how the app is organized, why each task route exists, and
+          how reusable architecture supports professional delivery.
         </span>
       </header>
 
@@ -47,8 +47,8 @@ export default function AboutPage() {
       </section>
 
       <div className={styles.actions}>
-        <Link href="/products">Explore products</Link>
-        <Link href="/contact">Contact the team</Link>
+        <Link href="/task-1">Back to Task 1</Link>
+        <Link href="/task-2">Go to Task 2</Link>
       </div>
     </article>
   );

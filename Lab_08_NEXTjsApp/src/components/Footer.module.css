@@ -1,13 +1,13 @@
 .footer {
   margin-top: 1rem;
-  border-top: 1px solid var(--border);
-  background: rgba(255, 253, 249, 0.88);
+  border-top: 1px solid var(--line);
+  background: rgba(250, 252, 255, 0.86);
 }
 
 .inner {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1160px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 1.25rem 0;
+  padding: 1.1rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,20 +17,29 @@
 
 .copy {
   margin: 0;
+  color: var(--brand);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.subCopy {
+  margin: 0.2rem 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.8rem;
 }
 
 .links {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .links a {
   color: var(--ink);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   position: relative;
   padding-bottom: 0.1rem;
 }
@@ -44,10 +53,16 @@
   height: 1px;
   transform: scaleX(0);
   transform-origin: left;
-  background: var(--brand);
+  background: var(--accent);
   transition: transform 0.2s ease;
 }
 
 .links a:hover::after {
   transform: scaleX(1);
+}
+
+@media (max-width: 760px) {
+  .inner {
+    align-items: flex-start;
+  }
 }

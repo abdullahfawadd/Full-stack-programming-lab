@@ -3,7 +3,7 @@ import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Reach out regarding products, partnerships, or implementation support.",
+  description: "Contact page for the lab project submission and feedback.",
 };
 
 export default function ContactPage() {
@@ -11,10 +11,10 @@ export default function ContactPage() {
     <section className={styles.contact}>
       <header className={styles.header}>
         <p>Contact</p>
-        <h1>Let us know what you are building.</h1>
+        <h1>Share feedback on the project implementation.</h1>
         <span>
-          Send project details, timeline, and goals. We usually respond within one
-          business day.
+          This page completes Task 1 and provides a professional contact interface with
+          practical form structure and direct details.
         </span>
       </header>
 
@@ -47,16 +47,16 @@ export default function ContactPage() {
           <h2>Direct channels</h2>
           <ul>
             <li>
-              <span>Email</span>
-              <strong>hello@asterstudio.example</strong>
+              <span>Student</span>
+              <strong>M Abdullah</strong>
             </li>
             <li>
-              <span>Phone</span>
-              <strong>+1 (415) 555-0184</strong>
+              <span>Registration ID</span>
+              <strong>232052</strong>
             </li>
             <li>
-              <span>Hours</span>
-              <strong>Mon-Fri, 9:00-18:00</strong>
+              <span>Institution</span>
+              <strong>Air University Islamabad</strong>
             </li>
           </ul>
         </aside>

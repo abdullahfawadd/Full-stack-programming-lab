@@ -7,11 +7,16 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
-        <p className={styles.copy}>Aster Studio Commerce Lab {year}. All rights reserved.</p>
+        <div>
+          <p className={styles.copy}>M Abdullah (232052) | Air University Islamabad</p>
+          <p className={styles.subCopy}>Full Stack Programming Lab 08 | {year}</p>
+        </div>
         <div className={styles.links}>
-          <Link href="/">Home</Link>
+          <Link href="/">Dashboard</Link>
+          <Link href="/task-1">Task 1</Link>
+          <Link href="/task-2">Task 2</Link>
+          <Link href="/home">Home</Link>
           <Link href="/products">Products</Link>
-          <Link href="/contact">Contact</Link>
         </div>
       </div>
     </footer>

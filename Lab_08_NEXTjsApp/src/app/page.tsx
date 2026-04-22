@@ -1,62 +1,77 @@
 import Link from "next/link";
-import { products } from "@/data/products";
 import styles from "./page.module.css";
 
-const featuredProducts = products.slice(0, 3);
-const priceFormatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0,
-});
+const TASKS = [
+  {
+    title: "Task 1",
+    href: "/task-1",
+    summary:
+      "Multi-page application with dedicated Home, About, and Contact pages, shared navigation, and global footer via layout.",
+    cta: "Open Task 1",
+  },
+  {
+    title: "Task 2",
+    href: "/task-2",
+    summary:
+      "Dynamic component architecture with ProductList, dynamic product routes, and direct navigation between home, list, and detail pages.",
+    cta: "Open Task 2",
+  },
+];
 
-export default function HomePage() {
+export default function DashboardPage() {
   return (
-    <div className={styles.home}>
+    <div className={styles.dashboard}>
       <section className={styles.hero}>
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Lab 08 | Next.js App Router</p>
-          <h1>Build a modern multi-page storefront with dynamic routing.</h1>
+        <div className={styles.heroContent}>
+          <p className={styles.kicker}>Dashboard</p>
+          <h1>Professional Next.js Lab Workspace</h1>
           <p>
-            This production-style demo showcases reusable layouts, typed product data,
-            and clear navigation patterns across static and dynamic pages.
+            Start from this landing page, then navigate into Task 1 and Task 2. The
+            project is structured with reusable components, App Router best practices,
+            and production-ready styling consistency.
           </p>
 
-          <div className={styles.ctaRow}>
-            <Link href="/products" className={styles.primaryCta}>
-              Browse products
+          <div className={styles.heroActions}>
+            <Link href="/task-1" className={styles.primaryButton}>
+              Go to Task 1
             </Link>
-            <Link href="/about" className={styles.secondaryCta}>
-              Learn more
+            <Link href="/task-2" className={styles.secondaryButton}>
+              Go to Task 2
             </Link>
           </div>
         </div>
 
-        <aside className={styles.heroPanel}>
-          <h2>Included in this build</h2>
-          <ul>
-            <li>Home, About, and Contact pages</li>
-            <li>Global header and footer through shared layout</li>
-            <li>Dynamic product pages with route params</li>
-          </ul>
-          <Link href="/contact" className={styles.inlineLink}>
-            Start a conversation
-          </Link>
+        <aside className={styles.identityCard}>
+          <h2>Student Information</h2>
+          <dl>
+            <div>
+              <dt>Name</dt>
+              <dd>M Abdullah</dd>
+            </div>
+            <div>
+              <dt>Registration ID</dt>
+              <dd>232052</dd>
+            </div>
+            <div>
+              <dt>University</dt>
+              <dd>Air University Islamabad</dd>
+            </div>
+          </dl>
         </aside>
       </section>
 
-      <section className={styles.featured}>
-        <div className={styles.sectionHeader}>
-          <h2>Featured products</h2>
-          <Link href="/products">View full catalog</Link>
-        </div>
-
-        <div className={styles.featureGrid}>
-          {featuredProducts.map((product) => (
-            <article key={product.slug} className={styles.featureCard}>
-              <p>{product.category}</p>
-              <h3>{product.title}</h3>
-              <span>{priceFormatter.format(product.price)}</span>
-              <Link href={`/products/${product.slug}`}>Open details</Link>
+      <section className={styles.taskSection}>
+        <h2>Lab Tasks</h2>
+        <div className={styles.taskGrid}>
+          {TASKS.map((task, index) => (
+            <article
+              key={task.title}
+              className={styles.taskCard}
+              style={{ animationDelay: `${120 + index * 120}ms` }}
+            >
+              <span>{task.title}</span>
+              <p>{task.summary}</p>
+              <Link href={task.href}>{task.cta}</Link>
             </article>
           ))}
         </div>

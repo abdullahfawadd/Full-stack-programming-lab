@@ -12,12 +12,11 @@ export default function ProductList() {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        <p className={styles.kicker}>Catalog</p>
-        <h1>Products built with attention to detail.</h1>
+        <p className={styles.kicker}>Task 2 | ProductList</p>
+        <h1>Product listing driven by reusable component logic.</h1>
         <p>
-          Explore our curated collection of workspace, travel, and audio essentials.
-          Each item is crafted around practical use, refined materials, and long-term
-          durability.
+          This ProductList renders data from a typed product source and links each card
+          to a dedicated dynamic product page using route parameters.
         </p>
       </div>
 

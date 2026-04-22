@@ -14,16 +14,17 @@
 }
 
 .breadcrumb a {
-  color: var(--brand-strong);
+  color: var(--accent);
   font-weight: 600;
 }
 
 .hero {
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: clamp(1.2rem, 2.8vw, 2rem);
-  background: linear-gradient(150deg, #fffdf8 0%, #fff2e7 100%);
+  background: var(--surface);
   box-shadow: var(--shadow-soft);
+  animation: fade-up 0.45s ease both;
 }
 
 .category {
@@ -53,10 +54,11 @@
 }
 
 .highlights {
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   padding: 1rem;
-  background: #ffffff;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
 }
 
 .highlights h2 {
@@ -73,10 +75,10 @@
 }
 
 .highlights li {
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   border-radius: 12px;
   padding: 0.6rem 0.75rem;
-  background: #fffcf7;
+  background: var(--surface-muted);
 }
 
 .actions {
@@ -94,8 +96,8 @@
 }
 
 .secondary {
-  border: 1px solid var(--border);
-  background: #ffffff;
+  border: 1px solid var(--line);
+  background: var(--surface-muted);
 }
 
 .primary {

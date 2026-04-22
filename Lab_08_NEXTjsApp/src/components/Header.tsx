@@ -5,10 +5,12 @@ import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Dashboard" },
+  { href: "/task-1", label: "Task 1" },
+  { href: "/task-2", label: "Task 2" },
+  { href: "/home", label: "Home" },
   { href: "/products", label: "Products" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const isActiveLink = (pathname: string, href: string): boolean => {
@@ -26,7 +28,8 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link href="/" className={styles.brand}>
-          Aster Studio
+          <span className={styles.brandTitle}>Lab 08 Next.js</span>
+          <span className={styles.brandMeta}>M Abdullah | 232052</span>
         </Link>
 
         <nav aria-label="Primary navigation" className={styles.nav}>

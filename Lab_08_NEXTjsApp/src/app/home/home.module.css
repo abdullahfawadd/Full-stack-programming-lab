@@ -1,0 +1,109 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 0.9rem;
+}
+
+.hero,
+.profileCard {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero {
+  padding: clamp(1.2rem, 2.8vw, 2rem);
+  animation: fade-up 0.5s ease both;
+}
+
+.hero p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.73rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 0.74rem 0 0;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  max-width: 20ch;
+}
+
+.hero span {
+  display: block;
+  margin-top: 0.9rem;
+  max-width: 67ch;
+}
+
+.actions {
+  margin-top: 1.15rem;
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.actions a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--brand);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.54rem 0.88rem;
+}
+
+.actions a:last-child {
+  border-color: transparent;
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.profileCard {
+  padding: 1.1rem;
+  animation: fade-up 0.45s ease both;
+  animation-delay: 120ms;
+}
+
+.profileCard h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.profileCard ul {
+  margin: 0.8rem 0 0;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.profileCard li {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-muted);
+  padding: 0.65rem;
+}
+
+.profileCard span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.profileCard strong {
+  display: block;
+  margin-top: 0.18rem;
+  color: var(--brand);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}

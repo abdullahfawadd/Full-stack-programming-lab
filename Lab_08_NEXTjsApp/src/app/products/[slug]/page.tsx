@@ -5,9 +5,9 @@ import { getProductBySlug, products } from "@/data/products";
 import styles from "./product-detail.module.css";
 
 type ProductDetailPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 const priceFormatter = new Intl.NumberFormat("en-US", {
@@ -25,7 +25,8 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: ProductDetailPageProps): Promise<Metadata> {
-  const product = getProductBySlug(params.slug);
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
 
   if (!product) {
     return {
@@ -40,8 +41,9 @@ export async function generateMetadata({
   };
 }
 
-export default function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();
@@ -50,7 +52,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   return (
     <article className={styles.wrapper}>
       <p className={styles.breadcrumb}>
-        <Link href="/">Home</Link>
+        <Link href="/">Dashboard</Link>
+        <span>/</span>
+        <Link href="/task-2">Task 2</Link>
         <span>/</span>
         <Link href="/products">Products</Link>
         <span>/</span>
@@ -74,11 +78,14 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       </section>
 
       <div className={styles.actions}>
+        <Link href="/home" className={styles.secondary}>
+          Home
+        </Link>
         <Link href="/products" className={styles.secondary}>
-          Back to products
+          ProductList
         </Link>
         <Link href="/contact" className={styles.primary}>
-          Contact sales
+          Contact
         </Link>
       </div>
     </article>
