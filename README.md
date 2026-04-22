@@ -1,68 +1,73 @@
-# Full-Stack Programming Lab
+# Full Stack Programming Lab Portfolio
 
-This repository contains practical lab work for a Full-Stack Programming course, organized by lab folders and task-based mini projects.
+Comprehensive coursework repository for Full Stack Programming, covering static web design, JavaScript interactivity, modern ES6 patterns, jQuery UI workflows, React fundamentals, advanced React routing, and Next.js App Router development.
 
-## Repository Structure
+## Student Profile
 
-- `Lab_02-JS-Interactivity/` — JavaScript DOM/BOM interactivity fundamentals.
-- `Lab_03_ES6_JS/` — ES6+ JavaScript concepts and application-style tasks.
-- `Lab_04_ES6_JS.(JQuery)/` — jQuery-based interactive labs.
+- Name: M Abdullah
+- Registration ID: 232052
+- Institution: Air University Islamabad
 
-## Labs and Tasks
+## Repository Index
 
-### Lab 02 — JS Interactivity
-Path: `Lab_02-JS-Interactivity/`
+| Module | Focus Area | Documentation |
+| --- | --- | --- |
+| FullStackProgramming_Assignment_01 | Multi-page e-commerce style frontend assignment | [FullStackProgramming_Assignment_01/README.md](FullStackProgramming_Assignment_01/README.md) |
+| Lab_02-JS-Interactivity | DOM and BOM interactivity with vanilla JavaScript | [Lab_02-JS-Interactivity/README.md](Lab_02-JS-Interactivity/README.md) |
+| Lab_03_ES6_JS | ES6+ practical applications and modular logic | [Lab_03_ES6_JS/README.md](Lab_03_ES6_JS/README.md) |
+| Lab_04_ES6_JS.(JQuery) | jQuery-based interactive UI and async workflows | [Lab_04_ES6_JS.(JQuery)/README.md](Lab_04_ES6_JS.%28JQuery%29/README.md) |
+| Lab_05_React | React fundamentals with components, props, and routing | [Lab_05_React/README.md](Lab_05_React/README.md) |
+| Lab_06_reactjsApp | Multi-task React app with dashboard and nested routes | [Lab_06_reactjsApp/README.md](Lab_06_reactjsApp/README.md) |
+| Lab_08_NEXTjsApp | Next.js App Router project with dashboard-first architecture | [Lab_08_NEXTjsApp/README.md](Lab_08_NEXTjsApp/README.md) |
 
-1. Dynamic Quiz (`task1-dynamic-quiz/`)
-2. Interactive Calculator (`task2-interactive-calculator/`)
-3. Simple To-Do List (`task3-todo-list/`)
-4. Color Box Generator (`task4-color-box-generator/`)
-5. Registration Form Validation (`task5-form-validation/`)
+## Documentation Strategy
 
-➡ See full lab details in [`Lab_02-JS-Interactivity/README.md`](Lab_02-JS-Interactivity/README.md).
+- Each assignment and lab folder has a dedicated top-level README.
+- Each task has separate task-level documentation where applicable.
+- Task READMEs include objective, implementation highlights, files, and run instructions.
 
-### Lab 03 — ES6 JavaScript
-Path: `Lab_03_ES6_JS/`
+## Local Run Guide
 
-1. Student Management (`task1/`)
-2. Shopping Cart (`task2/`)
-3. Async Data Loader (`task3/`)
-4. Course Registration System (`task4/`)
-5. Product Catalog (`task5/`)
-6. Mini University Portal (`task6/`)
-7. Student Data with JSON (`task7/`)
+### Static HTML/CSS/JS Labs
 
-➡ See full lab details in [`Lab_03_ES6_JS/README.md`](Lab_03_ES6_JS/README.md).
+1. Open the target lab or assignment folder.
+2. Open `index.html` (or the relevant page) in a modern browser.
 
-### Lab 04 — ES6 + jQuery Interactive Labs
-Path: `Lab_04_ES6_JS.(JQuery)/`
+### React Labs (Lab 05, Lab 06)
 
-1. Dynamic List Manager (`tasks/task1/`)
-2. Animated Image Gallery (`tasks/task2/`)
-3. Interactive Form Validation (`tasks/task3/`)
-4. Tabbed Content Interface (`tasks/task4/`)
-5. Chained Style Editor (`tasks/task5/`)
-6. API Data Fetcher (`tasks/task6/`)
-7. Drag-and-Drop Sortable (`tasks/task7/`)
-8. Knowledge Quiz (`tasks/task8/`)
+1. Open a terminal in the selected lab folder.
+2. Run:
 
-➡ See full lab details in [`Lab_04_ES6_JS.(JQuery)/README.md`](Lab_04_ES6_JS.(JQuery)/README.md).
+```bash
+npm install
+npm run dev
+```
 
-## How to Run
+3. Open the local URL printed by Vite (typically `http://localhost:5173`).
 
-Since each task is a standalone front-end exercise:
+### Next.js Lab (Lab 08)
 
-1. Open any lab folder.
-2. Open the task's `index.html` in a browser.
-3. Interact with the UI to test functionality.
+1. Open a terminal in `Lab_08_NEXTjsApp`.
+2. Run:
 
-## Technologies Used
+```bash
+npm install
+npm run dev
+```
+
+3. Open `http://localhost:3000`.
+
+## Technology Stack
 
 - HTML5
 - CSS3
 - JavaScript (ES6+)
-- jQuery (Lab 04)
+- jQuery
+- React
+- React Router
+- Next.js (App Router)
+- TypeScript (Lab 08)
 
----
+## Academic Note
 
-> Course repository for Full-Stack Programming Lab.
+This repository is maintained as a structured academic portfolio. Each module is documented independently to support review, grading, and future extension.
