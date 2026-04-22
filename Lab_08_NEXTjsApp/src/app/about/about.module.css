@@ -1,0 +1,76 @@
+.about {
+  display: grid;
+  gap: 1rem;
+}
+
+.header {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, #fffdf8 0%, #f5f8ed 100%);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(1.35rem, 3.1vw, 2.2rem);
+}
+
+.header p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--brand-strong);
+}
+
+.header h1 {
+  margin: 0.72rem 0 0;
+  max-width: 24ch;
+  font-size: clamp(1.75rem, 3.7vw, 2.7rem);
+}
+
+.header span {
+  margin-top: 0.9rem;
+  display: block;
+  max-width: 70ch;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  background: var(--surface-strong);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0.6rem 0 0;
+}
+
+.actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.actions a {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 600;
+  background: #ffffff;
+}
+
+.actions a:last-child {
+  border-color: transparent;
+  background: var(--brand);
+  color: #ffffff;
+}
