@@ -1,6 +1,6 @@
 # Full Stack Programming Lab Portfolio
 
-Comprehensive coursework repository for Full Stack Programming, covering static web design, JavaScript interactivity, modern ES6 patterns, jQuery UI workflows, React fundamentals, advanced React routing, and Next.js App Router development.
+Comprehensive coursework repository for Full Stack Programming, covering static web design, JavaScript interactivity, modern ES6 patterns, jQuery UI workflows, React fundamentals, advanced React routing, Next.js App Router development, and MERN stack development.
 
 ## Student Profile
 
@@ -19,6 +19,7 @@ Comprehensive coursework repository for Full Stack Programming, covering static 
 | Lab_05_React | React fundamentals with components, props, and routing | [Lab_05_React/README.md](Lab_05_React/README.md) |
 | Lab_06_reactjsApp | Multi-task React app with dashboard and nested routes | [Lab_06_reactjsApp/README.md](Lab_06_reactjsApp/README.md) |
 | Lab_08_NEXTjsApp | Next.js App Router project with dashboard-first architecture | [Lab_08_NEXTjsApp/README.md](Lab_08_NEXTjsApp/README.md) |
+| Lab_11_MERN_Stack_Node_MongoDB_Lab | Full-stack ecommerce app with Node, Express, MongoDB, Next.js, and Tailwind CSS | [Lab_11_MERN_Stack_Node_MongoDB_Lab/README.md](Lab_11_MERN_Stack_Node_MongoDB_Lab/README.md) |
 
 ## Documentation Strategy
 
@@ -57,6 +58,28 @@ npm run dev
 
 3. Open `http://localhost:3000`.
 
+### MERN Lab (Lab 11)
+
+1. Start local MongoDB.
+2. Open a terminal in `Lab_11_MERN_Stack_Node_MongoDB_Lab/ecommerce-app/backend`.
+3. Run:
+
+```bash
+npm install
+npm run seed
+npm run dev
+```
+
+4. Open another terminal in `Lab_11_MERN_Stack_Node_MongoDB_Lab/ecommerce-app/frontend`.
+5. Run:
+
+```bash
+npm install
+npm run dev
+```
+
+6. Open `http://localhost:3000`.
+
 ## Technology Stack
 
 - HTML5
@@ -67,6 +90,11 @@ npm run dev
 - React Router
 - Next.js (App Router)
 - TypeScript (Lab 08)
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Tailwind CSS
 
 ## Academic Note
 
