@@ -20,6 +20,7 @@ Comprehensive coursework repository for Full Stack Programming, covering static 
 | Lab_06_reactjsApp | Multi-task React app with dashboard and nested routes | [Lab_06_reactjsApp/README.md](Lab_06_reactjsApp/README.md) |
 | Lab_08_NEXTjsApp | Next.js App Router project with dashboard-first architecture | [Lab_08_NEXTjsApp/README.md](Lab_08_NEXTjsApp/README.md) |
 | Lab_11_MERN_Stack_Node_MongoDB_Lab | Full-stack ecommerce app with Node, Express, MongoDB, Next.js, and Tailwind CSS | [Lab_11_MERN_Stack_Node_MongoDB_Lab/README.md](Lab_11_MERN_Stack_Node_MongoDB_Lab/README.md) |
+| Lab_12_MERN_Stack_Nextjs_Dynamic_App_Lab | Dynamic MERN ecommerce app with a fresh MongoDB database, CRUD admin, cart, checkout, and screenshots | [Lab_12_MERN_Stack_Nextjs_Dynamic_App_Lab/README.md](Lab_12_MERN_Stack_Nextjs_Dynamic_App_Lab/README.md) |
 
 ## Documentation Strategy
 
@@ -71,6 +72,28 @@ npm run dev
 ```
 
 4. Open another terminal in `Lab_11_MERN_Stack_Node_MongoDB_Lab/ecommerce-app/frontend`.
+5. Run:
+
+```bash
+npm install
+npm run dev
+```
+
+6. Open `http://localhost:3000`.
+
+### Dynamic MERN Lab (Lab 12)
+
+1. Start local MongoDB.
+2. Open a terminal in `Lab_12_MERN_Stack_Nextjs_Dynamic_App_Lab/ecommerce-app/backend`.
+3. Run:
+
+```bash
+npm install
+npm run seed
+npm run dev
+```
+
+4. Open another terminal in `Lab_12_MERN_Stack_Nextjs_Dynamic_App_Lab/ecommerce-app/frontend`.
 5. Run:
 
 ```bash
