@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f1ec;
+  --foreground: #171717;
+  --ink: #111111;
+  --paper: #fffdf8;
+  --paper-soft: #f7f4ee;
+  --line: #d8d0c3;
+  --muted: #68635b;
+  --teal: #0f6b64;
+  --teal-dark: #063f3b;
+  --gold: #d89d2b;
+  --coral: #cd5b45;
+  --green: #2f7d4a;
+  --night: #151719;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Inter", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    var(--background);
+  background-size: 44px 44px;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(216, 157, 43, 0.28);
+}
+
+.shell {
+  width: min(1220px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: var(--gold);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.api-code {
+  max-height: 360px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.hero-panel {
+  background:
+    linear-gradient(135deg, rgba(216, 157, 43, 0.16), transparent 30%),
+    linear-gradient(112deg, var(--night) 0%, #20252a 58%, #0b403d 100%),
+    var(--night);
+}
+
+.fine-grid {
+  background-color: var(--night);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(216, 157, 43, 0.16), transparent 30%),
+    linear-gradient(112deg, var(--night) 0%, #20252a 58%, #0b403d 100%);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+
+.lifted {
+  box-shadow: 10px 10px 0 rgba(17, 17, 17, 0.95);
+}
+
+.teal-lifted {
+  box-shadow: 10px 10px 0 var(--teal-dark);
+}
+
+.gold-lifted {
+  box-shadow: 10px 10px 0 var(--gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}

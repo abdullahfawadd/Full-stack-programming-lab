@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab 14 Submission Report</title>
+    <style>
+      :root {
+        color: #171717;
+        background: #f3f1ec;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+      }
+      main {
+        width: min(1100px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 32px 0 56px;
+      }
+      header {
+        background: #151719;
+        color: white;
+        border: 2px solid #111;
+        padding: 28px;
+        box-shadow: 10px 10px 0 #111;
+      }
+      h1,
+      h2 {
+        margin: 0;
+      }
+      h1 {
+        font-size: 42px;
+      }
+      h2 {
+        margin-top: 38px;
+        font-size: 28px;
+      }
+      p,
+      li {
+        line-height: 1.6;
+      }
+      code {
+        background: #fffdf8;
+        border: 1px solid #d8d0c3;
+        padding: 2px 6px;
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+      .two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .shot {
+        background: #fffdf8;
+        border: 2px solid #111;
+        padding: 14px;
+        break-inside: avoid;
+      }
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid #d8d0c3;
+      }
+      .shot strong {
+        display: block;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 800px) {
+        .two {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p>Full Stack Programming Lab 14</p>
+        <h1>API RESTful Deployment and Testing Lab</h1>
+        <p>Student: M Abdullah | Registration ID: 232052</p>
+      </header>
+
+      <h2>Implementation Summary</h2>
+      <p>
+        Task 8.1 and Task 8.2 are implemented as a no-key REST API system using
+        Express.js. Weather data comes from Open-Meteo, and country headlines
+        come from Google News RSS converted into structured JSON.
+      </p>
+      <ul>
+        <li><code>GET /api/weather/:city</code> returns city name, current temperature, weather condition, and humidity level.</li>
+        <li><code>GET /api/news/:countryCode?limit=6</code> returns 5-10 headlines with title, source, URL, and publication date.</li>
+        <li>Invalid inputs and provider failures return structured error JSON.</li>
+        <li>Jest unit, integration, and system tests are included.</li>
+      </ul>
+
+      <h2>Task Screenshots</h2>
+      <div class="grid two">
+        <div class="shot">
+          <strong>Task 8.1 Weather UI</strong>
+          <img src="screenshots/task-8.1-weather/01-weather-ui.png" alt="Weather UI screenshot" />
+        </div>
+        <div class="shot">
+          <strong>Task 8.1 Weather API JSON</strong>
+          <img src="screenshots/task-8.1-weather/02-weather-api-json.png" alt="Weather API JSON screenshot" />
+        </div>
+        <div class="shot">
+          <strong>Task 8.2 News UI</strong>
+          <img src="screenshots/task-8.2-news/01-news-ui.png" alt="News UI screenshot" />
+        </div>
+        <div class="shot">
+          <strong>Task 8.2 News API JSON</strong>
+          <img src="screenshots/task-8.2-news/02-news-api-json.png" alt="News API JSON screenshot" />
+        </div>
+      </div>
+
+      <h2>Testing Evidence</h2>
+      <div class="grid two">
+        <div class="shot">
+          <strong>Jest All Test Suites</strong>
+          <img src="screenshots/testing/01-jest-all-tests.png" alt="Jest all tests screenshot" />
+        </div>
+        <div class="shot">
+          <strong>Unit Tests</strong>
+          <img src="screenshots/testing/02-jest-unit-tests.png" alt="Unit tests screenshot" />
+        </div>
+        <div class="shot">
+          <strong>Integration Tests</strong>
+          <img src="screenshots/testing/03-jest-integration-tests.png" alt="Integration tests screenshot" />
+        </div>
+        <div class="shot">
+          <strong>System Tests</strong>
+          <img src="screenshots/testing/05-jest-system-tests.png" alt="System tests screenshot" />
+        </div>
+        <div class="shot">
+          <strong>Browser Testing</strong>
+          <img src="screenshots/testing/04-browser-test-annotated.png" alt="Browser testing screenshot" />
+        </div>
+        <div class="shot">
+          <strong>Frontend Build</strong>
+          <img src="screenshots/testing/06-frontend-build.png" alt="Frontend build screenshot" />
+        </div>
+      </div>
+
+      <h2>GitHub Repository URL</h2>
+      <p><code>https://github.com/abdullahfawadd/Full-stack-programming-lab</code></p>
+    </main>
+  </body>
+</html>

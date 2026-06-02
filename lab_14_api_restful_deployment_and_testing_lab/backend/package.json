@@ -1,0 +1,37 @@
+{
+  "name": "lab-14-no-key-api-backend",
+  "version": "1.0.0",
+  "description": "Express REST APIs for Lab 14 weather forecast and news headline tasks using no-key external services.",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "jest --runInBand",
+    "test:unit": "jest tests/unit --runInBand",
+    "test:integration": "jest tests/integration --runInBand",
+    "test:system": "jest tests/system --runInBand"
+  },
+  "keywords": [
+    "express",
+    "rest-api",
+    "jest",
+    "weather",
+    "news",
+    "lab-14"
+  ],
+  "author": "M Abdullah",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "fast-xml-parser": "^5.3.2"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "nock": "^14.0.10",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4"
+  }
+}

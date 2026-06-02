@@ -1,0 +1,9 @@
+
+> lab-14-no-key-api-backend@1.0.0 test:unit
+> jest tests/unit --runInBand --verbose
+
+Test Suites: 2 passed, 2 total
+Tests:       7 passed, 7 total
+Snapshots:   0 total
+Time:        1.926 s
+Ran all test suites matching tests/unit.
