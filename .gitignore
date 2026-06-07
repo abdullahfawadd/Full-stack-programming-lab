@@ -1,0 +1,7 @@
+Final_Term_Project_CRM/backend/.env
+Final_Term_Project_CRM/backend/.env.*
+!Final_Term_Project_CRM/backend/.env.example
+Final_Term_Project_CRM/frontend/.env
+Final_Term_Project_CRM/frontend/.env.*
+!Final_Term_Project_CRM/frontend/.env.example
+Final_Term_Project_CRM/screenshots/

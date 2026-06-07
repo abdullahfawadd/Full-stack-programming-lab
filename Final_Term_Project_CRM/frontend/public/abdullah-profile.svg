@@ -1,0 +1,20 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="320" rx="40" fill="#080B10"/>
+  <path d="M0 238C52 212 101 221 151 239C209 260 263 252 320 214V320H0V238Z" fill="#101820"/>
+  <path d="M52 62H268V258H52V62Z" fill="#111827"/>
+  <path d="M82 82H238V238H82V82Z" fill="#18212C"/>
+  <circle cx="160" cy="126" r="42" fill="#D8BFA6"/>
+  <path d="M116 112C123 73 165 62 197 82C216 94 220 118 216 143C205 121 186 111 162 112C142 113 126 121 116 112Z" fill="#1A1A1A"/>
+  <path d="M96 252C102 199 126 174 160 174C194 174 218 199 224 252H96Z" fill="#101318"/>
+  <path d="M126 252L146 183H174L194 252H126Z" fill="#F3F6F8"/>
+  <path d="M146 183L160 206L174 183H146Z" fill="#DDE7EE"/>
+  <path d="M104 252C112 203 132 181 153 176L139 252H104Z" fill="#1D2530"/>
+  <path d="M216 252C208 203 188 181 167 176L181 252H216Z" fill="#222B36"/>
+  <circle cx="143" cy="126" r="6" fill="#0B1117"/>
+  <circle cx="177" cy="126" r="6" fill="#0B1117"/>
+  <path d="M140 153C151 162 169 162 180 153" stroke="#8B5E48" stroke-width="5" stroke-linecap="round"/>
+  <rect x="120" y="116" width="34" height="18" rx="9" stroke="#E7EFF5" stroke-width="4"/>
+  <rect x="166" y="116" width="34" height="18" rx="9" stroke="#E7EFF5" stroke-width="4"/>
+  <path d="M154 125H166" stroke="#E7EFF5" stroke-width="4" stroke-linecap="round"/>
+  <text x="160" y="292" fill="#DDFCF3" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">M ABDULLAH</text>
+</svg>
