@@ -12,7 +12,6 @@ import {
   LogOut,
   Menu,
   Plus,
-  Search,
   Share2,
   Sparkles,
   Star,
@@ -24,6 +23,7 @@ import { initials } from "@/lib/format";
 import { operatorProfile } from "@/lib/config";
 import type { User } from "@/types/crm";
 import { RuleChatbot } from "@/components/chatbot/rule-chatbot";
+import { GlobalSearch } from "@/components/search/global-search";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -227,9 +227,7 @@ export function DashboardShell({ children }: { children: ReactNode }) {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button size="icon-lg" variant="outline" className="rounded-full bg-white/80" aria-label="Search">
-              <Search className="size-4" />
-            </Button>
+            <GlobalSearch />
             <Button size="icon-lg" variant="outline" className="rounded-full bg-white/80" aria-label="Notifications">
               <Bell className="size-4" />
             </Button>
